@@ -40,97 +40,57 @@
     font-weight: normal;
     font-style: normal;
 }
-   *{
+
+   body{
     margin: 0;
     padding: 0;
     text-align: center;
+    transition: background-color 1s ease;
+    overflow: hidden;
   }
-  /*
+
   .container{
-    font-family: "Pretendard-ExtraBold";
-    padding: 50px;
-  }
-  #subtitle{
-    font-family: "Pretendard-Regular";
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
   }
   
-  body {
-    text-align: center;
-    margin: 0;
-    font-size: 20px;
-    transition: background-color 0.5s ease;
-  } */
-
-  /* .orange-background */
-  /* * {
-    background-color: #E56922;
-    background-image: url(../icon/grid.png)
-  } */
-
-  /* 추가된 부분: 스크롤 전후의 상태에 따라 배경색 변경 */
-  /* body.scroll-active {
-    background-color: lightblue;
+  section {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    scroll-snap-align: start;
+    transition: background-color 1s ease;
   }
-  */
+
+  .landing {
+    background-color: #E56922; /* 섹션1의 배경 색상 */
+    background-image: url(../icon/grid.png);
+    color: #fff;
+  }
+  
+  .select {
+    background-color: white; /* 섹션2의 배경 색상 */
+    color: #404040;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
   #subtitle{
     font-family: "omyu_pretty";
     color: white;
   } 
-
- 
-  body {
-    margin: 0;
-    font-size: 20px;
-    transition: background-color 1s ease;
-    overflow: hidden;
-}
-
-
-
-.box {
-    width: 100vw;
-    height: 100vh;
-
+  
+  #first-down{
     position: relative;
-    scroll-snap-align: start;
-    transition: background-color 1s ease;
-}
-
-.box-scroll {
-    overflow-y: scroll;
-    height: 100%;
-    scroll-snap-type: y mandatory;
-}
-
-.box-inner {
-    padding: 20px;
-}
-
-.landing {
-    background-color: #E56922; /* 섹션1의 배경 색상 */
-    background-image: url(../icon/grid.png);
-    color: #fff;
-}
-
-.select {
-    background-color: #3498db; /* 섹션2의 배경 색상 */
-    color: #fff;
-}
-
-.orange-background {
-    background-color: orange;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-}
-
-#first-down{
-  position: relative;
-  top: 35vh;
-  width: 5vw;
-}
+    top: 35vh;
+    width: 5vw;
+  }
 
 * ::-webkit-scrollbar {
   display: none; /* 크롬, 사파리, 오페라, 엣지 */
