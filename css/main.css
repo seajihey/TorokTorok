@@ -34,6 +34,109 @@
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
       format("woff");
   }
+  @font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+   *{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  /*
+  .container{
+    font-family: "Pretendard-ExtraBold";
+    padding: 50px;
+  }
+  #subtitle{
+    font-family: "Pretendard-Regular";
+  }
+  
+  body {
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    transition: background-color 0.5s ease;
+  } */
+
+  /* .orange-background */
+  /* * {
+    background-color: #E56922;
+    background-image: url(../icon/grid.png)
+  } */
+
+  /* 추가된 부분: 스크롤 전후의 상태에 따라 배경색 변경 */
+  /* body.scroll-active {
+    background-color: lightblue;
+  }
+  */
+  #subtitle{
+    font-family: "omyu_pretty";
+    color: white;
+  } 
+
+ 
+  body {
+    margin: 0;
+    font-size: 20px;
+    transition: background-color 1s ease;
+    overflow: hidden;
+}
+
+
+
+.box {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    scroll-snap-align: start;
+    transition: background-color 1s ease;
+}
+
+.box-scroll {
+    overflow-y: scroll;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+}
+
+.box-inner {
+    padding: 20px;
+}
+
+.landing {
+    background-color: #E56922; /* 섹션1의 배경 색상 */
+    background-image: url(../icon/grid.png);
+    color: #fff;
+}
+
+.select {
+    background-color: #3498db; /* 섹션2의 배경 색상 */
+    color: #fff;
+}
+
+.orange-background {
+    background-color: orange;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+#first-down{
+  position: relative;
+  top: 35vh;
+  width: 5vw;
+}
+
+* ::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+
+
  /* font 사용시 */
 /*  font-family: "Pretendard-ExtraBold"; */
 /* 단위는 px로 하면 화면줄이면 이상해져서 ... vw vh로 합시다 */
