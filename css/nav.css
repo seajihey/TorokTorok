@@ -1,0 +1,149 @@
+/* <div class = "nav_logo">
+<div class="logoText">토록토록</div>
+<div class="logoImg"><img src="./image/titleIcon.svg" ></div>
+</div>
+
+<div class="nav_menu">
+<div class="menu home">
+    <div class="homeImg"><img src="./image/cal.svg" ></div>
+    <div class="homeText">달력</div>
+</div>
+<div class="menu mypage">
+    <div class="mypageImg"><img src="./image/my.svg" ></div>
+    <div class="mypageText">마이</div>
+</div>
+<div class="menu setting">
+    <div class="settingImg"><img src="./image/setting.svg"></div>
+    <div class="settingText">설정</div>
+</div>
+<div class="menu friend">
+    <div class="friendImg"><img src="./image/friends.svg"></div>
+    <div class="friendText">친구</div>
+</div>
+</div>
+
+<div class="nav_login">
+로그인
+</div> */
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Light";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 400;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 500;
+    font-family: "Pretendard-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 600;
+    font-family: "Pretendard-SemiBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 800;
+    font-family: "Pretendard-ExtraBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+      format("woff");
+  }
+
+  @font-face {
+    font-family: 'SangSangYoungestDaughter';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/*기본설정 지우기*/
+body{
+    width: 100vw;
+    height: 100vw;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* unactive = 안보이게하고 js로 보이게설정하기 */
+.unactive{
+    display: none;
+}
+.active{
+    filter: invert(68%) sepia(23%) saturate(5638%) hue-rotate(334deg) brightness(97%) contrast(87%);
+}
+
+
+/* 전체 nav 일자로 맞추기 */
+
+/* 전체 nav 일자로 맞추기 */
+nav {
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* 각각 요소 일자로 맞추기 */
+.nav_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3vw;
+    font-family: "SangSangYoungestDaughter";
+    font-size: 2rem;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw; 
+}
+.nav_login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 3vw;
+
+}
+/* 메뉴 디자인 수정 */
+.menu {
+    font-family: "omyu_pretty";
+    font-size: 1rem;
+    padding-left: 1.67vw;
+    padding-right: 1.67vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.menuText {
+    position: absolute;
+    transform: translateY(25px);
+}
