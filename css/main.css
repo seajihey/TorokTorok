@@ -1,4 +1,10 @@
 @font-face {
+  font-family: 'SangSangYoungestDaughter';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
     font-weight: 300;
     font-family: "Pretendard-Light";
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
