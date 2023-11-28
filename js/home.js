@@ -4,10 +4,20 @@ import{ Nav } from './nav.js';
 class Home{
 
     constructor(){
+        // nav불러오기
         this.navTool = new Nav();
-        // home 파라미터 자리에 자기 html페이지 이름 , nav 파라미터 자리에 자기 html속 nav id넣기!!
         this.navTool.fetchingNav('home','nav');
+
+
+        //함수
+        this.functionName();
     }
+
+    functionName(){
+        pass
+    }
+
+
 
 
 
