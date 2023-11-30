@@ -24,16 +24,24 @@
             src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
             format("woff");
         }
+        body {
+            background-color: #fffefc;
+        }
         h2,h4,p {
-            margin-left: auto;
+            margin-left: 300px;
             margin-right: auto;
             font-family: "Pretendard-Light";
         }
         table {
             margin-left: auto;
             margin-right: auto;
-            text-align: left;
+            text-align: center;
             font-family: "Pretendard-Light";
+            width: 600px;
+            height: 200px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            background-color: white;
         }
         .toggleSwitch {
             width: 50px;
@@ -98,14 +106,17 @@
         <table>
             <tr>
                 <td>1:1</td>
+                <td> &nbsp; </td>
                 <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
             </tr>
             <tr>
                 <td>16:9</td>
+                <td> &nbsp; </td>
                 <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
             </tr>
             <tr>
                 <td>4:3</td>
+                <td> &nbsp; </td>
                 <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
             </tr>
         </table>
