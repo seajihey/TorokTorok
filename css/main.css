@@ -38,23 +38,33 @@
     font-weight: 800;
     font-family: "Pretendard-ExtraBold";
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
-      format("woff");
+    format("woff");
   }
   @font-face {
     font-family: 'omyu_pretty';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-}
-
-   body{
+  }
+  
+  * ::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+  }
+  
+  body{
     margin: 0;
     padding: 0;
     text-align: center;
     transition: background-color 1s ease;
     overflow: hidden;
   }
-
+  
+  img, p{
+    display: block;
+    margin: 0 auto;
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+  }
   .container{
     scroll-snap-type: y mandatory;
     height: 100vh;
@@ -65,7 +75,6 @@
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    display: flex;
     position: relative;
     scroll-snap-align: start;
     transition: background-color 1s ease;
@@ -77,32 +86,100 @@
     color: #fff;
   }
   
-  .select {
-    background-color: white; /* 섹션2의 배경 색상 */
-    color: #404040;
+  .box{
+    position: relative;
+    top: 11vh;
   }
   
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-
+  #title{
+    font-family: "SangSangYoungestDaughter";
+    font-size: 185px;
+    color: white;
+  } 
+  
   #subtitle{
-    font-family: "omyu_pretty";
+    font-family: "SangSangYoungestDaughter";
+    font-size: 32px;
     color: white;
   } 
   
   #first-down{
     position: relative;
-    top: 35vh;
-    width: 5vw;
+    width: 50px;
+    top: 23vh;
+  }
+  
+  /*섹션2 */
+  
+  .select {
+    background-color: #FFFEFC; /* 섹션2의 배경 색상 */
+    background-image: url(../icon/grid.png);
+    color: #404040;
+    
+  }
+  
+  #rogo{
+    font-family: "SangSangYoungestDaughter";
+    font-size: 32px;
+    text-align: left;
+    padding: 20px;
+    display: inline;
+
+  }
+  #goToRogin{
+    font-family: "Pretendard-Medium";
+    font-size: 24px;
+    color: #404040;
+    display: inline;
   }
 
-* ::-webkit-scrollbar {
-  display: none; /* 크롬, 사파리, 오페라, 엣지 */
-}
+  .existing{
+    width: 50vw;
+    float: left;
+    display: inline;
+    position: relative;
+    top: 35vh;
+  }
+  .new{
+    width: 50vw;
+    float: right;
+    position: relative;
+    top: 35vh;
+  }
 
+  .v-line {
+    position: absolute;
+    border-left : 3px solid #e1e0e0;
+    height : 100vh;
+    left: 50vw;
+    display: inline;
+  }
 
+  .em{
+    font-family: "Pretendard-Bold";
+    font-size: 50px;
+    color: #EC5C1E;
+  }
+
+  .darkButton{
+    background-color: #404040;
+    color: white;
+    width: 170px;
+    height: 60px;
+    border: none;
+    border-radius: 13px;
+    font-size: 27px;
+    font-family: 'Pretendard-SemiBold';
+  }
+  .darkButton:focus{
+    outline: 0;
+  }
+  .darkButton:hover{
+    background-color: #2a2a2a;
+    cursor: pointer;
+    box-shadow: 0 2px 4px #424242;
+  }
+  .darkButton:
  /* font 사용시 */
 /*  font-family: "Pretendard-ExtraBold"; */
 /* 단위는 px로 하면 화면줄이면 이상해져서 ... vw vh로 합시다 */

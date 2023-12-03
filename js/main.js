@@ -9,15 +9,16 @@ class Home{
         this.navTool.fetchingNav('main','nav');
 
         //2. 여기에 실행 순서대로 추가함니다 !!
-        this.functionName();
+        this.showPopup();
     }
 
     //예시작성법 1. 이렇게 기능을 할 함수 만들고 
-    functionName(){
-   pass
-    }
+    showPopup() { 
+        window.open("code_pw_popup.html", "a", "width=400, height=300, left=100, top=50"); }
 
 }
+
+
 
 //필수 지우면 안돼용 맨 막줄에 있어야 해용
 // new Home()자리에 Home을 자기 클래스 이름으로 고곡

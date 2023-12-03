@@ -30,27 +30,56 @@
         <div id="content">  
             <section class="landing">
                 <div class="box">
-                    <div class="box-inner">
-                        <img style="width: 10vw;" src="../icon/gold_bunny.png"><br>
-                        <img style="width: 30vw;" src="../icon/toroktorok_title_white.png"><br>
-                        <p id="subtitle">습관을 토대로 기록하다 </p><br>
-                        <img id="first-down" src="../icon/system-uicons_chevron-down-double_white.png">
-                    </div>
+                    <img style="width: 13vw; min-width: 150px;" src="../icon/hand_toroktorok.png">
+                    <p id="title">토록토록:</p>
+                    <!-- <img style="width: 550px;" src="../icon/toroktorok_title_white.png"> -->
+                    <p id="subtitle">마음을 토대로 기록하다 </p><br>
+                    <img id="first-down" src="../icon/system-uicons_chevron-down-double_white.png">
                 </div>
             </section>
             <section class="select"> 
-                <div class="box">
-                    <div class="box-inner">
-                        <div>기존 달력</div>
-
+                <header>
+                    <div id="rogo">토록토록</div>
+                    <div id="goToRogin">로그인 하러가기
+                        <img src="../icon/arrowdown_right.png" style="display: inline;">
                     </div>
-                </div>
+                </header>
+                <article class="existing">
+                    <p class="em">기존 달력</p><br>
+                    <p>달력 생성시 입력했던 code와 pw로 재입장합니다.<br>
+                        입장 후 오늘의 기록을 추가해보세요.</p><br><br>
+                        <button type="button" class="darkButton" onclick="showPopup();">입장하기</button>
+                </article>
+                <div class='v-line'></div>
+                <article class="new">
+                    <p class="em">새로운 달력</p><br>
+                    <p>새롭게 달력을 생성합니다.<br>
+                        입장 후 오늘의 기록을 작성해 보세요. </p><br><br>
+                    <button type="button" class="darkButton" onclick="showPopup();">생성하기</button>
+                </article>
             </section>
         </div>
-        
     </div>
   
-    
+    <script>
+        var target = document.querySelectorAll('.showPopup()');
+        var targetID;
+      
+        // 팝업 열기
+        for(var i = 0; i < target.length; i++){
+          target[i].addEventListener('click', function(){
+            targetID = this.getAttribute('href');
+            document.querySelector(targetID).style.display = 'block';
+          });
+        }
+        
+        // 팝업 닫기
+        for(var j = 0; j < target.length; j++){
+          btnPopClose[j].addEventListener('click', function(){
+            this.parentNode.parentNode.style.display = 'none';
+          });
+        }
+      </script>
         
 </body>
 </html>
