@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>토록토록</title>
+    <link rel="stylesheet" href="./css/home.css">
     <script type="module" src="./js/home.js" defer></script>
     <script type="module" src="./js/nav.js" defer></script>
 
@@ -14,28 +15,36 @@
 
     </nav>
 
+    <!--                     메인달력             dd                   -->
 
-    <!--                     메인달력                                -->
-    <div class="container">
-        <!-- 달력 text-->
-        <div class="text">
-            <div class="textMonth">
-                11월
-            </div>
-            <div class="textYear">
-                2023년
-            </div>
-        </div>
+    <div class="header">
+        <div class="yearMonth">
+            <div class="year">
 
+            </div>
+            <div class="month"></div>
+        </div>      
         <div class="cal">
-            <div class="dayText">
-
+            <div class="calNav">
+                <button class="navBtn goPrev">&lt;</button>
+                <button class="navBtn goToday">Today</button>
+                <button class="navBtn goNext">&gt;</button>
             </div>
         </div>
 
+        <div class="calMain">
+            <div class="days">
+                <div class="day">일</div>
+                <div class="day">월</div>
+                <div class="day">화</div>
+                <div class="day">수</div>
+                <div class="day">목</div>
+                <div class="day">금</div>
+                <div class="day">토</div>
+            </div>
+            <div class="dates"></div>
+        </div>
     </div>
-
-
 
 
     <!--                      code 변경하기                             -->

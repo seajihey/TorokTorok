@@ -68,7 +68,7 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+    }
 @font-face {
     font-family: 'omyu_pretty';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
@@ -78,7 +78,7 @@
 /*기본설정 지우기*/
 body{
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -96,7 +96,6 @@ a {
 }
 
 
-/* 전체 nav 일자로 맞추기 */
 
 /* 전체 nav 일자로 맞추기 */
 nav {
@@ -106,6 +105,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    
 }
 
 /* 각각 요소 일자로 맞추기 */
@@ -116,6 +116,7 @@ nav {
     padding-left: 3vw;
     font-family: "SangSangYoungestDaughter";
     font-size: 2rem;
+    width: 9.74vw;
 }
 
 .nav_menu {
@@ -129,6 +130,8 @@ nav {
     align-items: center;
     justify-content: center;
     padding-right: 3vw;
+    width: 9.74vw;
+
 
 }
 /* 메뉴 디자인 수정 */
