@@ -59,6 +59,17 @@
         a {
             text-decoration-line: none;
         }
+        #color {
+            border: 1px solid black;
+            padding: 10px 10px;
+            width: 80px;
+            height: 150px;
+            display: inline-block;
+        }
+        table {
+            margin-left: 300px;
+            font-family: "Pretendard-Light";
+        }
     </style>
 </head>
 <body>
@@ -72,11 +83,17 @@
     <h2>설정</h2>
     <h4> <a href="C:\Users\dbstj\OneDrive\바탕 화면\토록토록\TorokTorok\templates\main.html"> < </a> 테마 색상 변경</h4>
     <p>연필 모양 혹은 색을 클릭하여 색을 변경해보세요.</p>
-    <div id="all">
-        <div id="main"></div>
-        <div id="sub"></div>
-        <div id="back"></div>
-    </div>
-
+    <table>
+        <tr>
+            <td>메인</td>
+            <td>서브</td>
+            <td>배경</td>
+        </tr>
+        <tr>
+            <td><input type="color" id="color"></td>
+            <td><input type="color" id="color"></td>
+            <td><input type="color" id="color"></td>
+        </tr>
+    </table>
 </body>
 </html>
