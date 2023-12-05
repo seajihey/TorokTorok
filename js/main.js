@@ -9,13 +9,15 @@ class Home{
         this.navTool.fetchingNav('main','nav');
 
         //2. 여기에 실행 순서대로 추가함니다 !!
-        this.showPopup();
+        // this.showPopup();
     }
 
     //예시작성법 1. 이렇게 기능을 할 함수 만들고 
-    showPopup() { 
-        window.open("code_pw_popup.html", "a", "width=400, height=300, left=100, top=50"); }
+    // showPopup() { 
 
+    //      $('#modalTriggerButton').click();}
+
+    // myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
 }
 
 

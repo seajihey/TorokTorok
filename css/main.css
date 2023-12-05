@@ -58,14 +58,16 @@
     transition: background-color 1s ease;
     overflow: hidden;
   }
+
   
-  img, p{
+  p{
     display: block;
-    margin: 0 auto;
+    margin: 0;
     font-family: "Pretendard-Regular";
     font-size: 24px;
+    word-spacing: -1.5px;
   }
-  .container{
+  .container1{
     scroll-snap-type: y mandatory;
     height: 100vh;
     overflow-y: scroll;
@@ -77,19 +79,22 @@
     justify-content: center;
     position: relative;
     scroll-snap-align: start;
-    transition: background-color 1s ease;
+    transition: 
+      background-color 1s ease;
   }
 
-  .landing {
+  .landing1 {
     background-color: #E56922; /* 섹션1의 배경 색상 */
     background-image: url(../icon/grid.png);
     color: #fff;
   }
   
-  .box{
+  .box1{
     position: relative;
     top: 11vh;
   }
+
+
   
   #title{
     font-family: "SangSangYoungestDaughter";
@@ -104,33 +109,48 @@
   } 
   
   #first-down{
-    position: relative;
+    position: absolute;
     width: 50px;
-    top: 23vh;
+    top: 80vh; left: 48.5vw;
+    
   }
   
   /*섹션2 */
-  
-  .select {
+   
+  .select1{
     background-color: #FFFEFC; /* 섹션2의 배경 색상 */
     background-image: url(../icon/grid.png);
     color: #404040;
     
   }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+
+  }
   
   #rogo{
     font-family: "SangSangYoungestDaughter";
     font-size: 32px;
-    text-align: left;
-    padding: 20px;
+    padding-top: 3vh;
+    padding-left: 3vw;
     display: inline;
 
   }
   #goToRogin{
     font-family: "Pretendard-Medium";
-    font-size: 24px;
+    font-size: 20px;
     color: #404040;
-    display: inline;
+    display: flex;
+    width: 175px;
+    padding: 1.5vw;
+  }
+  
+  #rogo_text{
+    text-align: center;
+    position: relative;
+    top: 1vh;
   }
 
   .existing{
@@ -138,19 +158,19 @@
     float: left;
     display: inline;
     position: relative;
-    top: 35vh;
+    top: 30vh;
   }
   .new{
     width: 50vw;
     float: right;
     position: relative;
-    top: 35vh;
+    top: 30vh;
   }
 
   .v-line {
     position: absolute;
-    border-left : 3px solid #e1e0e0;
-    height : 100vh;
+    border-left : 2px solid #e1e0e0;
+    height : 90vh;
     left: 50vw;
     display: inline;
   }
@@ -164,8 +184,8 @@
   .darkButton{
     background-color: #404040;
     color: white;
-    width: 170px;
-    height: 60px;
+    width: 178px;
+    height: 63px;
     border: none;
     border-radius: 13px;
     font-size: 27px;
@@ -179,7 +199,10 @@
     cursor: pointer;
     box-shadow: 0 2px 4px #424242;
   }
-  .darkButton:
+  
+
+
+
  /* font 사용시 */
 /*  font-family: "Pretendard-ExtraBold"; */
 /* 단위는 px로 하면 화면줄이면 이상해져서 ... vw vh로 합시다 */
