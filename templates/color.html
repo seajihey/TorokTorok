@@ -7,14 +7,15 @@
     <!-- favicon 들어갈 자리 수정필요없음-->
     <link
     rel="icon"
-    href="#"
+    href="../image/dog.svg"
     type="image/x-icon"
     />
     <link
       rel="shortcut icon"
-      href="{% static 'image/favicon.ico' %}"
+      href="../image/dog.svg"
       type="image/x-icon"
     />
+    <script type="module" src="../js/nav.js" defer></script>
 
     <title>토록토록</title>
     <style>
@@ -24,72 +25,91 @@
             src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
             format("woff");
         }
+        @font-face {
+            font-family: 'SangSangYoungestDaughter';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             background-color: #fffefc;
         }
-        h2,h4,p {
-            margin-left: 300px;
+        h4,p {
+            margin-left: 20vw;
             margin-right: auto;
             font-family: "Pretendard-Light";
+            font-size: 25px;
+        }
+        h2 {
+            margin-left: 20vw;
+            margin-right: auto;
+            font-family: 'SangSangYoungestDaughter';
+            font-size: 40px;
         }
         #main {
             border: 1px solid black;
             padding: 10px 10px;
-            width: 80px;
-            height: 150px;
-            margin-left: 300px;
+            width: 125px;
+            height: 250px;
+            margin-left: 20vw;
             display: inline-block;
         }
         #sub {
             border: 1px solid black;
             padding: 10px 10px;
-            width: 80px;
-            height: 150px;
-            margin-left: 50px;
+            width: 125px;
+            height: 250px;
+            margin-left: 3vw;
             display: inline-block;
         }
         #back {
             border: 1px solid black;
             padding: 10px 10px;
-            width: 80px;
-            height: 150px;
-            margin-left: 50px;
+            width: 125px;
+            height: 250px;
+            margin-left: 3vw;
             display: inline-block;
         }
         a {
             text-decoration-line: none;
         }
-        #color {
-            border: 1px solid black;
-            padding: 10px 10px;
-            width: 80px;
-            height: 150px;
-            display: inline-block;
-        }
         table {
-            margin-left: 300px;
+            margin-left: 30vw;
+            font-family: "Pretendard-Light";
+        }
+        #text {
+            margin-left: 12vw;
+            font-size: 25px;
+        }
+        #maintext, #subtext, #backtext {
+            display: inline-block;
+            margin-left: 8vw;
             font-family: "Pretendard-Light";
         }
     </style>
 </head>
 <body>
-    <nav id="nav"></nav>
+    <nav id="nav">
+
+    </nav>
     <div class="container">
-        <!-- code 작성 -->
-        <!-- nav bar는 통일을 위해 nav.html로 따로만들기위해 이거는 빼고 작성해주세요 -->
-        <!-- icon들 ( 우측버튼이라던가 )은 fontawesome 사용합시다. 구글에 쳐보고 모르겠으면 물어봐주세용-->
+
     </div>
 
+    <br>
+    <br>
     <h2>설정</h2>
     <h4> <a href="../setting.html"> < </a> 테마 색상 변경</h4>
     <p>연필 모양 혹은 색을 클릭하여 색을 변경해보세요.</p>
-    <table>
-        <tr>
-            <td>메인</td>
-            <td>서브</td>
-            <td>배경</td>
-        </tr>
-    </table>
+    <br>
+    <br>
+    
+    <div id="text">
+        <div id="maintext">메인</div>
+        <div id="subtext">서브</div>
+        <div id="backtext">배경</div>
+    </div>
     <!--https://webactually.com/2021/02/05/
         CSS-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%A7%80%EC%A0%95-
         %EC%86%8D%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%83%89%EC%83%81-
