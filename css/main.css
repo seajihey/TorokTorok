@@ -40,6 +40,69 @@
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
       format("woff");
   }
+  @font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+   body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background-color 1s ease;
+    overflow: hidden;
+  }
+
+  .container{
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  
+  section {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    scroll-snap-align: start;
+    transition: background-color 1s ease;
+  }
+
+  .landing {
+    background-color: #E56922; /* 섹션1의 배경 색상 */
+    background-image: url(../icon/grid.png);
+    color: #fff;
+  }
+  
+  .select {
+    background-color: white; /* 섹션2의 배경 색상 */
+    color: #404040;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #subtitle{
+    font-family: "omyu_pretty";
+    color: white;
+  } 
+  
+  #first-down{
+    position: relative;
+    top: 35vh;
+    width: 5vw;
+  }
+
+* ::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+
+
  /* font 사용시 */
 /*  font-family: "Pretendard-ExtraBold"; */
 /* 단위는 px로 하면 화면줄이면 이상해져서 ... vw vh로 합시다 */

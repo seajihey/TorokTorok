@@ -1,0 +1,250 @@
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Light";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 400;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 500;
+    font-family: "Pretendard-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 600;
+    font-family: "Pretendard-SemiBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 800;
+    font-family: "Pretendard-ExtraBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'SangSangYoungestDaughter';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+    background-color: #FFFEFC;
+    height: 100vh;
+    width: 100vw ;
+}
+.unactive{
+    display: none;
+}
+.factive{
+    opacity: 1 !important;
+}
+
+.fpage{
+    padding-top: 8vh;
+    padding-left:25vw;
+    padding-right: 25vw;
+}
+.fTitle{
+    font-family:'omyu_pretty' ;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top:5vh;
+    width: 50vw;
+}
+.fheader{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+.fSelect{
+    display: flex;
+    font-family: "Pretendard-Medium";
+    font-size: 1rem;
+}
+.fS1{
+    margin:0.5vw 0.5vw 0.5vw 0;
+    opacity: 0.5;
+
+}
+.fS2{
+    margin:0.5vw 0.5vw 0.5vw 0.5vw;
+    opacity: 0.5;
+
+}
+.fplus{
+    margin:0.5vw 0 0.5vw 0.5vw;
+    background-color:#E97E41 ;
+    font-family: "Pretendard-Medium";
+    font-size: 1rem;
+    padding:0.7vh 0.7vw;
+    text-align: center;
+    border-radius:1rem ;
+    color : white;
+    
+}
+
+
+
+/* 친구 박스 섹션 */
+.fbox{
+    width: 50vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    background-color: rgb(239, 239, 239);
+    border-radius: 1rem;
+    
+}
+.fprofile{
+    width: 7vw;
+    height: 7vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    display: flex; /* Flexbox 설정 추가 */
+    border: 1px solid rgb(220, 220, 220);
+    margin-left: 1.5vw;
+}
+.profileImg{
+    width: 100px;
+    height: 100px;
+}
+.fdetail{
+    align-items: center;
+    height: fit-content;
+
+
+}
+.fname{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: 'omyu_pretty';
+    font-size: 2rem;
+}
+.fresume{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    font-family: 'omyu_pretty';
+    font-size: 1rem;
+}
+
+
+.fseeCal{
+    display: flex;
+    align-items: center; 
+    margin-left: auto;
+    font-family: 'omyu_pretty';
+    font-size: 1rem;
+    margin-right: 1vw;
+}
+.fseeCalText{
+
+}
+.fseeCalImg{
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
+
+/* Second Page */
+
+.fsbox{
+    width: 50vw;
+    height: fit-content;
+    align-items: center;
+    background-color: white;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 1rem;
+    padding-bottom: 5vh
+}
+.fsubjectAll{
+    display: flex;
+    margin:3vh 5vw 0 5vw;
+    width: 40vw;
+    padding-bottom: 1vh;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    font-family: "Pretendard-Medium";
+    font-size: 1.2rem;
+}
+.fsubject{
+}
+
+.user{
+    display: flex;
+    margin:3vh 5vw 0 5vw;
+    width: 40vw;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid rgb(172, 172, 172);
+    font-family: "Pretendard-regular";
+    font-size: 1rem;
+
+
+}
+.fsfname{
+    font-family: 'omyu_pretty';
+    font-size: 1.5rem;
+}
+
+
+.fsfriend{
+    display: flex;
+    width: 40vw;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.fsImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ;
+}
+.fsprofile{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: translateX(-3vw);
+}
+.fsftime{
+    display: flex;
+    text-align: center;
+}
+.fsfrecord{
+
+}
+.fsfreview{
+
+}
+
