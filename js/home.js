@@ -1,70 +1,78 @@
 // nav 불러오기
 import{ Nav } from './nav.js';
-
+import{ Db } from './db.js';
 class Home{
 
     constructor(){
-        // 자주쓰는 변수 저장
-        
+        /* 자주쓰는 변수 저장*/
+        //현재 날짜저장
+        this.date = new Date();
+        //현재 달 인덱스( 젤 처음load시, 현재달. 옆으로넘기면 그 달로 인덱스 추가됨)
+        this.currentIndex = this.date.getMonth();
+        //달 list
+        this.allMonthList = [1,2,3,4,5,6,7,8,9,10,11,12]
 
-        // nav불러오기
+
+
+        /* nav불러오기*/
         this.navTool = new Nav();
         this.navTool.fetchingNav('home','nav');
+        /* db불러오기*/
+        this.db = new Db();
 
 
-        //함수
-        this.getCalSetting();
+        /* 함수 */
+        this.getDays();
     }
 
     
-    getCalSetting(){
-        const date = new Date();
-        const viewYear = date.getFullYear(); 
-        const viewMonth = date.getMonth();
-        
-        document.querySelector('.year').textContent = `${viewYear}년`;
-        document.querySelector('.month').textContent = `${viewMonth + 1}월`;
-        this.getDays();
-    }
     /* 달렦의 빈공간에 저번달 날짜와 다음달날짜까지 가져오기 함수 */
     getDays(){
-        const date = new Date();
-        const viewYear = date.getFullYear(); 
-        const viewMonth = date.getMonth();
-        
-        const prevLast = new Date(viewYear, viewMonth, 0);
-        const thisLast = new Date(viewYear, viewMonth + 1, 0);
-
-        const PLDate = prevLast.getDate();
-        const PLDay = prevLast.getDay();
-
-        const TLDate = thisLast.getDate();
-        const TLDay = thisLast.getDay();
-
-        // 달마다 날짜 담기
-        const prevDates = [];
-        const thisDates = [...Array(TLDate + 1).keys()].slice(1);
-        const nextDates = [];
-
-        if (PLDay !== 6) {
-        for (let i = 0; i < PLDay + 1; i++) {
-            prevDates.unshift(PLDate - i);
-        }
-        }
-
-        for (let i = 1; i < 7 - TLDay; i++) {
-        nextDates.push(i);
-        }
-
-        const dates = prevDates.concat(thisDates, nextDates);
-
-        dates.forEach((date, i) => {
-          dates[i] = `<div class="date">${date}</div>`;
-        })
-        
-        document.querySelector('.dates').innerHTML = dates.join('');
+        document.querySelectorAll('.head').forEach(head => {
+            const dataList = parseInt(head.getAttribute('data-list'), 10);
+            const currentDate = new Date(); // 현재 날짜
+            const targetDate = new Date(currentDate);
+    
+            targetDate.setMonth(targetDate.getMonth() + dataList - 2);
+            
+            if (targetDate < currentDate) {
+                targetDate.setFullYear(targetDate.getFullYear() + 1);
+            } else if (targetDate > currentDate) {
+                targetDate.setFullYear(targetDate.getFullYear() - 1);
+            }
+    
+            const viewYear = targetDate.getFullYear();
+            const viewMonth = targetDate.getMonth();
+            const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+            const lastDay = new Date(viewYear, viewMonth + 1, 0).getDate();
+    
+            const prevMonthLastDay = new Date(viewYear, viewMonth, 0).getDate();
+            const nextMonthFirstDay = new Date(viewYear, viewMonth + 1, 1).getDay();
+    
+            const prevDates = [];
+            for (let i = firstDay - 1; i >= 0; i--) {
+                prevDates.unshift(prevMonthLastDay - i);
+            }
+    
+            const thisDates = [];
+            for (let i = 1; i <= lastDay; i++) {
+                thisDates.push(i);
+            }
+    
+            const nextDates = [];
+            for (let i = 1; i < 7 - nextMonthFirstDay; i++) {
+                nextDates.push(i);
+            }
+    
+            const dates = prevDates.concat(thisDates, nextDates);
+    
+            const datesContainer = head.querySelector('.dates');
+            datesContainer.innerHTML = dates.map(date => `<div class="date" data-day="${date}">${date}</div>`).join('');
+            
+            head.querySelector('.year').textContent = `${viewYear}년`;
+            head.querySelector('.month').textContent = `${viewMonth + 1}월`;
+        });
     }
-
 
 
 }

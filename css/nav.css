@@ -104,7 +104,7 @@ nav {
     height: 8vh;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: absolute;
     
 }
 
