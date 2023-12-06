@@ -7,14 +7,17 @@
     <!-- favicon 들어갈 자리 수정필요없음-->
     <link
     rel="icon"
-    href="image/dog.svg"
+    href="../image/dog.svg"
     type="image/x-icon"
     />
     <link
       rel="shortcut icon"
-      href="image/dog.svg"
+      href="../image/dog.svg"
       type="image/x-icon"
     />
+
+    <script type="module" src="../js/setting.js" defer></script>
+    <script type="module" src="../js/nav.js" defer></script>
 
     <title>토록토록</title>
 
@@ -95,7 +98,9 @@
     </style>
 </head>
 <body>
-    <nav id="nav"></nav>
+    <nav id="nav">
+
+    </nav>
     <div class="container">
         
     </div>
@@ -136,15 +141,5 @@
         </table>
     </div>
     
-    
-    <script>
-        const toggleList = document.querySelectorAll(".toggleSwitch");
-
-        toggleList.forEach(($toggle) => {
-            $toggle.onclick = () => {
-                $toggle.classList.toggle('active');
-            }
-        });
-    </script>
 </body>
 </html>
