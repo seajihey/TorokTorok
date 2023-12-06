@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/start.css" >
+    <link rel="stylesheet" href="../css/popUp.css">
+    <link rel="stylesheet" href="../css/bootstrap_css/bootstrap.css">
+
+    <title>토록토록</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap_js/bootstrap.js"></script>
+    <script type="module" src="../js/main.js" defer></script>
+    <script type="module" src="./js/nav.js" defer></script>
+    
+    <!-- code 작성 -->
+    <!-- nav bar는 통일을 위해 nav.html로 따로만들기위해 이거는 빼고 작성해주세요 -->
+    <!-- icon들 ( 우측버튼이라던가 )은 fontawesome 사용합시다. 구글에 쳐보고 모르겠으면 물어봐주세용-->
+
+
+</head>
+<body>
+    <nav id="nav"></nav>
+    <div class="container1">
+        <div id="content1">  
+            <section class="landing1">
+                <div class="box1">
+                    <img style="width: 13vw; min-width: 180px;" src="../icon/hand_toroktorok.png">
+                    <p id="title">토록토록:</p>
+                    <!-- <img style="width: 550px;" src="../icon/toroktorok_title_white.png"> -->
+                    <p id="subtitle">마음을 토대로 기록하다 </p><br>
+                    <img id="first-down" src="../icon/system-uicons_chevron-down-double_white.png">
+                </div>
+            </section>
+            <section class="select1"> 
+                <div class="header">
+                    <div id="rogo">토록토록</div>
+                    <div id="goToRogin">
+                        <div id="rogo_text">로그인 하러가기</div>  
+                        <div><img src="../icon/arrowdown_right.png"></div>
+                    </div>
+                </div>
+                <article class="existing">
+                    <p class="em">기존 달력</p><br>
+                    <p>달력 생성 시 입력했던 code와 pw로 재입장합니다.<br>
+                        입장 후 오늘의 기록을 추가해 보세요.</p><br><br>
+                        <button type="button" class="darkButton btn" data-bs-toggle="modal" data-bs-target="#exampleModal">입장하기</button>
+                </article>
+                <div class='v-line'></div>
+                <article class="new">
+                    <p class="em">새로운 달력</p><br>
+                    <p>새롭게 달력을 생성합니다.<br>
+                        입장 후 오늘의 기록을 작성해 보세요. </p><br><br>
+                    <button type="button" class="darkButton btn" data-bs-toggle="modal" data-bs-target="#exampleModal">생성하기</button>
+                </article>
+            </section>
+
+
+            <!-- 모달 팝업 / code, pw 입력 -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="dsc" id="exampleModalLabel">환영합니다!</p>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    </div>
+                    <div class="modal-body">
+                        <input class="code_pw" type="text" placeholder="code"><br>
+                        <input class="code_pw" type="password" placeholder="pw"><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn_enter">입장하기&nbsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 21 24" fill="none">
+                              <path d="M19.5 9.40193C21.5 10.5566 21.5 13.4434 19.5 14.5981L4.5 23.2583C2.5 24.413 3.2161e-07 22.9697 2.94071e-07 20.6603L8.75256e-08 3.33974C5.99862e-08 1.03034 2.5 -0.41303 4.5 0.74167L19.5 9.40193Z" fill="white"/>
+                            </svg>
+                          </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+            
+        </div>
+    </div>
+  
+        
+</body>
+</html>

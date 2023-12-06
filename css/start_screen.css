@@ -1,0 +1,166 @@
+@import url("../css/font.css");
+  
+  * ::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background-color 1s ease;
+    overflow: hidden;
+  }
+
+  p{
+    display: block;
+    margin: 0;
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+    word-spacing: -1.5px;
+  }
+  .container1{
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  
+  section {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+    scroll-snap-align: start;
+    transition: 
+      background-color 1s ease;
+  }
+
+  .landing1 {
+    background-color: #E56922; /* 섹션1의 배경 색상 */
+    background-image: url(../icon/grid.png);
+    color: #fff;
+  }
+  
+  .box1{
+    position: relative;
+    top: 11vh;
+  }
+
+
+  
+  #title{
+    font-family: "SangSangYoungestDaughter";
+    font-size: 185px;
+    color: white;
+  } 
+  
+  #subtitle{
+    font-family: "SangSangYoungestDaughter";
+    font-size: 32px;
+    color: white;
+  } 
+  
+  #first-down{
+    position: absolute;
+    width: 50px;
+    top: 80vh; left: 48.5vw;
+    
+  }
+  
+  /*섹션2 */
+   
+  .select1{
+    background-color: #FFFEFC; /* 섹션2의 배경 색상 */
+    background-image: url(../icon/grid.png);
+    color: #404040;
+    
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+  #rogo{
+    font-family: "SangSangYoungestDaughter";
+    font-size: 32px;
+    padding-top: 3vh;
+    padding-left: 3vw;
+    display: inline;
+
+  }
+  #goToRogin{
+    font-family: "Pretendard-Medium";
+    font-size: 20px;
+    color: #404040;
+    display: flex;
+    width: 175px;
+    padding: 1.5vw;
+  }
+  
+  #rogo_text{
+    text-align: center;
+    position: relative;
+    top: 1vh;
+  }
+
+  .existing{
+    width: 50vw;
+    float: left;
+    display: inline;
+    position: relative;
+    top: 30vh;
+  }
+  .new{
+    width: 50vw;
+    float: right;
+    position: relative;
+    top: 30vh;
+  }
+
+  .v-line {
+    position: absolute;
+    border-left : 2px solid #e1e0e0;
+    height : 90vh;
+    left: 50vw;
+    display: inline;
+  }
+
+  .em{
+    font-family: "Pretendard-Bold";
+    font-size: 50px;
+    color: #EC5C1E;
+  }
+
+  .darkButton{
+    background-color: #404040;
+    color: white;
+    width: 178px;
+    height: 63px;
+    border: none;
+    border-radius: 13px;
+    font-size: 27px;
+    font-family: 'Pretendard-SemiBold';
+  }
+  .darkButton:focus{
+    outline: 0;
+  }
+  .darkButton:hover{
+    background-color: #2a2a2a;
+    cursor: pointer;
+    box-shadow: 0 2px 4px #424242;
+  }
+  
+  .darkButton:active{
+    background-color: #2a2a2a;
+    cursor: pointer;
+
+}
+
+
+ /* font 사용시 */
+/*  font-family: "Pretendard-ExtraBold"; */
+/* 단위는 px로 하면 화면줄이면 이상해져서 ... vw vh로 합시다 */
+/* 100vw  하시면 현재 창 가로길이에 에 딱맞는 사이즈입니다 */
+/* 100vh 하시면 현재 창 가로길이에 에 딱맞는 사이즈입니다 */
