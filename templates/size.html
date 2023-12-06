@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- favicon 들어갈 자리 수정필요없음-->
+    <link
+    rel="icon"
+    href="#"
+    type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'image/favicon.ico' %}"
+      type="image/x-icon"
+    />
+
+    <title>토록토록</title>
+    <style>
+        @font-face {
+            font-weight: 300;
+            font-family: "Pretendard-Light";
+            src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+            format("woff");
+        }
+        body {
+            background-color: #fffefc;
+        }
+        h2,h4,p {
+            margin-left: 300px;
+            margin-right: auto;
+            font-family: "Pretendard-Light";
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-family: "Pretendard-Light";
+            width: 600px;
+            height: 200px;
+            border: 1px solid #c4c4c4;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .toggleSwitch {
+            width: 50px;
+            margin: 30px;
+            height: 25px;
+            display: block;
+            position: relative;
+            border-radius: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 16px 3px rgba(0 0 0 / 15%);
+            cursor: pointer;
+        }
+
+        .toggleSwitch .toggleButton {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: #e97e41;
+        }
+
+        .toggleSwitch.active {
+            background: #e97e41;
+        }
+
+        .toggleSwitch.active .toggleButton {
+            left: calc(100% - 22px);
+            background: #fff !important;
+        }
+
+        .toggleSwitch, .toggleButton {
+            transition: all 0.2s ease-in;
+        }
+
+        .toggleSwitch.active {
+            background: #e97e41;
+        }
+
+        .toggleSwitch.active .toggleButton {
+            left: calc(100% - 22px);
+            background: #fff;
+        }
+        a {
+            text-decoration-line: none;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav"></nav>
+    <div class="container">
+        <!-- code 작성 -->
+        <!-- nav bar는 통일을 위해 nav.html로 따로만들기위해 이거는 빼고 작성해주세요 -->
+        <!-- icon들 ( 우측버튼이라던가 )은 fontawesome 사용합시다. 구글에 쳐보고 모르겠으면 물어봐주세용-->
+    </div>
+
+    <h2>설정</h2>
+    <h4> <a href="./main.html"> < </a> 달력 비율 설정</h4>
+    <p>내 사진에 맞는 비율을 찾아보세요. 설정한 값에 따라 메인 화면의 달력 크기가 달라집니다.</p>
+    <div class="center-table">
+        <table>
+            <tr>
+                <td>1:1</td>
+                <td> &nbsp; </td>
+                <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
+            </tr>
+            <tr>
+                <td>16:9</td>
+                <td> &nbsp; </td>
+                <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
+            </tr>
+            <tr>
+                <td>4:3</td>
+                <td> &nbsp; </td>
+                <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    <script>
+        const toggleList = document.querySelectorAll(".toggleSwitch");
+
+        toggleList.forEach(($toggle) => {
+            $toggle.onclick = () => {
+                $toggle.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+</html>
