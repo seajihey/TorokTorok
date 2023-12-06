@@ -1,5 +1,5 @@
 // nav 불러오기
-class Main{
+class Start_screen{
 
     constructor(){
         // home 파라미터 자리에 자기 html페이지 이름 , nav 파라미터 자리에 자기 html속 nav id넣기!!
@@ -25,5 +25,5 @@ class Main{
 //필수 지우면 안돼용 맨 막줄에 있어야 해용
 // new Home()자리에 Home을 자기 클래스 이름으로 고곡
 window.onload = () =>{
-    new Main();
+    new Start_screen();
 }
