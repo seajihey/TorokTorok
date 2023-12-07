@@ -1,0 +1,163 @@
+@import url("../css/font.css");
+
+
+* ::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    /* transition: background-color 1s ease; */
+    overflow: hidden;
+    
+  }
+
+
+/*배경 확인용*/
+body{
+    background-color: rgb(56, 56, 56);
+}
+
+.section1{
+  float: right;
+  background-color: white;
+  width: 45vw; height: 100vw;
+}
+
+.head{
+  position: relative;
+  width: 40.5vw;
+  top: 5.5vh; left: 1.8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.obj{
+  padding-top: 9vh; 
+  padding-left: 3vw; padding-right: 3vw;
+}
+
+*::placeholder{
+  padding-left: 1vw; padding-top: 1.5vh;
+  font-family: "Pretendard-Regular";
+  font-size: .8vw;
+  color: #BEBEBE;
+
+}
+
+.content{
+  float: left;
+  text-align: center;
+  /* transition: all .15s ease-in-out; */
+  width: 18vw; height: 52.8vh;  
+  
+  background-color: rgba(217, 217, 217, 0.45);
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
+}
+
+ #content_info{
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  color: #BEBEBE;
+  padding-top: 25.5vh;
+}
+
+.right_content{
+  float: right;
+  width: 18vw;
+
+}
+#title{
+  width: 17.65vw; height: 6vh;
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
+}
+
+.review_option_box{
+  position: relative;
+  top: 3.8vh;
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
+  width: 18vw; height: 42.5vh;
+}
+
+.review_option{
+  width: 15vw; height: 38vh;
+  padding-left: 1.5vw; padding-top: 3vh;
+}
+
+
+.label{
+  display: inline;
+  float: left;
+  font-family: "Pretendard-Regular";
+  font-size: .9vw;
+  /* padding-left: 1.5vw; */
+}
+
+
+/*별점*/
+.rating_box {
+  display: flex;
+  /* display: inline;
+  position: relative;
+  float: right; */
+}
+
+.rating {
+  position: relative;
+  color: #ddd;
+  font-size: 30px;
+  text-align: center;
+}
+
+.rating input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rating_star {
+  width: 0;
+  color: #ffc107;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+.bottom_content{
+    clear: both;
+    padding-top: 4.5vh;
+  }
+ 
+.review_title{
+  padding-bottom: .8vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#label{
+  font-family: "Pretendard-Regular";
+  font-size: 1vw;
+  position: relative;
+}
+
+#textarea{
+  width: 39vw; height: 17vh;
+  resize: none;
+}
+
+/* .embed-img{
+  width: 100%;
+  height: 128px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 8px;
+} */

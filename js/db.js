@@ -37,6 +37,13 @@ export class Db{
 
     ]
 
+    tags = [
+        {"tag": "영화"},
+        {"tag": "드라마"},
+        {"tag": "책"},
+    ]
+
+
     record = [
         {"code":"seojihye",
         "title":"그대들은 어떻게 살 것인가",

@@ -13,120 +13,88 @@ body{
     
   }
 
+
+/*배경 확인용*/
 body{
     background-color: rgb(56, 56, 56);
 }
 
 .section1{
-    float: right;
-    background-color: white;
-    width: 45vw; height: 100vw;
+  float: right;
+  background-color: white;
+  width: 45vw; height: 100vw;
+}
+
+.head{
+  position: relative;
+  width: 40.5vw;
+  top: 5.5vh; left: 1.8vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .obj{
-  padding-top: 15vh; 
+  padding-top: 9vh; 
   padding-left: 3vw; padding-right: 3vw;
 }
 
-
-.content{
-  float: left;
-  text-align: center;
-  /* transition: all .15s ease-in-out; */
-  width: 18vw; height: 52.8vh;  
-  /* width: 350px; height: 495px;   */
-  background-color: rgba(217, 217, 217, 0.45);
-}
-
-.right_content{
-  float: right;
-  width: 18vw;
-
-}
-#title{
-  width: 17.65vw; height: 6vh;
-  border: 1.5px solid rgba(0, 0, 0, 0.35);
-}
-
-.review_option{
-  position: relative;
-  top: 3.8vh;
-  border: 1.5px solid rgba(0, 0, 0, 0.35);
-  width: 18vw; height: 42.5vh;
-}
-
-.label{
-  display: inline;
-  float: left;
-  font-family: "Pretendard-Regular";
-  font-size: 18px;
-  padding-left: 1.5vw;
-}
-
-
-
-/*별점*/
-.rating_box {
-  display: inline;
-  position: relative;
-  float: right;
-}
-
-.rating {
-  position: relative;
-  color: #ddd;
-  font-size: 30px;
-  text-align: center;
-}
-
-.rating input {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.rating_star {
-  width: 0;
-  color: #ffc107;
-  position: absolute;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-
-.bottom_content{
-    clear: both;
-    padding-top: 4.5vh;
-}
-
-#textarea{
-  width: 39vw; height: 17vh;
-}
-
-#textarea::placeholder{
+*::placeholder{
   padding-left: 1vw; padding-top: 1.5vh;
   font-family: "Pretendard-Regular";
-  font-size: 16px;
+  font-size: .8vw;
   color: #BEBEBE;
 
 }
 
-#label{
-  font-family: "Pretendard-Regular";
-  font-size: 18px;
-  padding-bottom: 1vh;
+.one_line_review{
+  text-align: center;
+  /* transition: all .15s ease-in-out; */
+  width: 39vw; height: 15vh;  
 }
 
-/* .embed-img{
-  width: 100%;
-  height: 128px;
-  object-position: center;
-  object-fit: cover;
-  border-radius: 8px;
+#one_line_review_text{
+    width: 39vw; height: 5.5vh;
+}
+
+.detail_review{
+    width: 39vw; height: 5.5vh;
+   
+}
+
+.detail_review_header{
+    width: 39vw;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.text_effect{
+    padding-left: 1vw;
+
+}
+
+.label{
+    display: inline;
+    float: left;
+    font-family: "Pretendard-Regular";
+    font-size: .9vw;
+    padding-bottom: 1vh;
+}
+
+/* img{
+    margin: 0;
+    width: 2vw; height: 2vh;
+}
+#underline{
+    width: 2.5vw; height: 2.2vh;
+    padding-top: .5vh;
 } */
+
+#textarea{
+  width: 39vw; height: 60vh;
+  resize: none;
+}
+
+#textarea::placeholder{
+    font-size: .9vw;
+}
