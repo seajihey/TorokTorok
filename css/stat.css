@@ -11,6 +11,52 @@ body{
     padding: 0;
     /* transition: background-color 1s ease; */
     overflow: hidden;
-    
+    background-color: rgba(255, 254, 252, 1);
+    /* letter-spacing: -2.56px; */
   }
 
+.nav_section{
+  width: 100vw;
+  height: 8vh;
+}
+
+.section{
+  width: 60vw; height: 92vh;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'omyu_pretty';
+  font-size: 2.3vw;
+  font-weight: bold;
+
+  padding-top: .5vh;
+  letter-spacing: -2px;
+}
+
+
+.left_content{
+  position: relative; 
+  float: left;
+  width: 28vw; height: 77vh;
+  background-color: gray;
+
+}
+
+
+/*오른쪽*/
+.right_content{
+  position: relative; 
+  float: right;
+  width: 28vw; height: 77vh;
+}
+
+#glass{
+  padding-top: .5vh; padding-right: .3vw;
+  float: right;
+}
+
+.view_month_record{
+  width: 28vw; height: 72vh;
+  background-color: rgba(252, 250, 247, 0.968);
+}
