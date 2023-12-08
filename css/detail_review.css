@@ -10,6 +10,7 @@ body{
     padding: 0;
     /* transition: background-color 1s ease; */
     overflow: hidden;
+   
     
   }
 
@@ -39,7 +40,7 @@ body{
 }
 
 *::placeholder{
-  padding-left: 1vw; padding-top: 1.5vh;
+  /* padding-left: 1vw; padding-top: 1.5vh; */
   font-family: "Pretendard-Regular";
   font-size: .8vw;
   color: #BEBEBE;
@@ -54,6 +55,9 @@ body{
 
 #one_line_review_text{
     width: 39vw; height: 5.5vh;
+    padding-left: 1vw;
+    font-family: "Pretendard-Regular";
+    font-size: 1vw;
 }
 
 .detail_review{
@@ -81,20 +85,12 @@ body{
     padding-bottom: 1vh;
 }
 
-/* img{
-    margin: 0;
-    width: 2vw; height: 2vh;
-}
-#underline{
-    width: 2.5vw; height: 2.2vh;
-    padding-top: .5vh;
-} */
 
 #textarea{
   width: 39vw; height: 60vh;
+  padding-left: 1vw; padding-top: 2vh;
   resize: none;
+  font-family: "Pretendard-Light";
+  font-size: .9vw;
 }
 
-#textarea::placeholder{
-    font-size: .9vw;
-}

@@ -1,6 +1,7 @@
 // nav 불러오기
 import{ Nav } from './nav.js';
 import{ Db } from './db.js';
+
 class Setting{
 
     constructor(){
