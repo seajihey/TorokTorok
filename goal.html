@@ -57,9 +57,40 @@
             font-family: 'SangSangYoungestDaughter';
             padding-left: 2vw;
         }
+        #data {
+            width:900px;
+            height:300px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #c4c4c4;
+            font-family: 'Pretendard-Light'; 
+            font-size: 25px;
+        }
+        #num {
+            width: 150px; 
+            height: 50px; 
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #c4c4c4;
+            font-size: 20px;
+        }
     </style>
+    <script>
+        // Local Storage에 데이터 저장하기
+        function saveData() {
+            var data = document.getElementById("data").value;
+            localStorage.setItem("myData", data);
+        }
+        // Local Storage에서 데이터 불러오기
+        function loadData() {
+            var data = localStorage.getItem("myData");
+            if (data) {
+                document.getElementById("data").value = data;
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="loadData()">
     <nav id="nav">
 
     </nav>
@@ -74,10 +105,11 @@
         <h4> <a href="../setting.html"> < </a> 목표 설정</h4>
         <p>한 달동안 몇 개의 기록을 할 지 정해보세요. 통계에서 확인할 수 있습니다.</p>
         <h4>한 달 목표 기록 개수</h4>
-        <input type="number" min="1" id="num" style="width: 150px; height: 50px; background-color: white;border-radius: 5px;border: 1px solid #c4c4c4;">
+        <input type="number" min="1" id="num" >
         <h4>나의 목표</h4>
-        <input type="text" style="width:900px;height:300px;background-color: white;border-radius: 10px;border: 1px solid #c4c4c4;font-family: Pretendard-Light; font-size: 25px;" placeholder="나만의 목표를 작성한 뒤, 다음에 확인 해 보세요 :)">
-        <button type="submit">저장</button>
+        <input type="text" placeholder ="나만의 목표를 작성한 뒤, 다음에 확인 해 보세요 :)" id="data">
+        <span><button onclick="saveData()">저장</button></span>
     </div>
+
 </body>
 </html>
