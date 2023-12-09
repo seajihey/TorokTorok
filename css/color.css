@@ -64,8 +64,8 @@
    --color: black;
    
    font-size: 1rem;
-   width: 8em;
-   padding: 0.25em;
+   width: 15em;
+   height: 4em;
    border: 0.125em solid transparent;
    border-radius: 0.5em;
    background: var(--background-color);

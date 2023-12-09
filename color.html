@@ -97,6 +97,19 @@
         #test {
             margin-left: 20vw;
         }
+        button {
+            background-color: #fffefc;
+            border: 1px solid #fffefc;
+            font-size: 25px;
+            font-family: "Pretendard-Light";
+        }
+        #button {
+            padding-left: 2vw;
+        }
+        .whiteLabel-revert, .import{
+            font-family: 'SangSangYoungestDaughter';
+            font-size: 30px;
+        }
     </style>
 </head>
 <body class="body">
@@ -127,23 +140,27 @@
     <div>
         <div class="whiteLabel">
             <span><input class="whiteLabel-color" type="color" id="main" value /></span>
-            <span></span><input class="whiteLabel-hover" type="color" id="sub" value /></span>
-            <span></span><input class="whiteLabel-text" type="color" id="back" value /></span>
+            <span><input class="whiteLabel-hover" type="color" id="sub" value /></span>
+            <span><input class="whiteLabel-text" type="color" id="back" value /></span>
+            <div id="button">
+                <button class="whiteLabel-revert">재설정</button><br><br>
+                <button class="import">저장 셋업 불러오기</button>
+            </div>
+            
         </div>
+        
+        
     </div>
     
     <p>아래 버튼으로 색을 확인해보세요 !</p>
     <div id="test">
-        <button class="green">Green Theme</button>
-        <button class="red">Red Theme</button>
-        <button class="blue">Blue Theme</button>
-        <button class="whiteLabel-revert">재설정</button>
+        <button class="green">Green Theme 적용</button>
+        <button class="red">Red Theme 적용</button>
+        <button class="blue">Blue Theme 적용</button>
+        
       
         <div class="app-styleguide">
-            <div>
-            <button class="btn-primary">Primary</button>
-            <button class="btn-primary" disabled>Disabled</button>    
-            </div>
+            <button class="btn-primary">미리보기</button> 
     </div>
 </body>
 </html>
