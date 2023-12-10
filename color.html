@@ -106,13 +106,13 @@
         #button {
             padding-left: 2vw;
         }
-        .whiteLabel-revert, .import{
+        .revert, .import{
             font-family: 'SangSangYoungestDaughter';
             font-size: 30px;
         }
     </style>
 </head>
-<body class="body">
+<body>
     <nav id="nav">
 
     </nav>
@@ -138,29 +138,34 @@
         %EC%86%8D%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%83%89%EC%83%81-
         %EB%A7%8C%EB%93%A4%EA%B8%B0/ 참고하기-->
     <div>
-        <div class="whiteLabel">
-            <span><input class="whiteLabel-color" type="color" id="main" value /></span>
-            <span><input class="whiteLabel-hover" type="color" id="sub" value /></span>
-            <span><input class="whiteLabel-text" type="color" id="back" value /></span>
+        <div class="colorSet">
+            <span><input class="main-color" type="color" id="main" value /></span>
+            <span><input class="sub-color" type="color" id="sub" value /></span>
+            <span><input type="color" id="back" name="colorPicker" onchange="changeBackgroundColor(event)"></span>
             <div id="button">
-                <button class="whiteLabel-revert">재설정</button><br><br>
+                <button class="revert" onclick="resetBackgroundColor()">재설정</button><br><br>
                 <button class="import">저장 셋업 불러오기</button>
             </div>
-            
         </div>
-        
-        
     </div>
     
     <p>아래 버튼으로 색을 확인해보세요 !</p>
     <div id="test">
-        <button class="green">Green Theme 적용</button>
-        <button class="red">Red Theme 적용</button>
-        <button class="blue">Blue Theme 적용</button>
-        
-      
-        <div class="app-styleguide">
+        <div class="app">
             <button class="btn-primary">미리보기</button> 
     </div>
+
+    <script>
+        function changeBackgroundColor(event) {
+          // 선택된 색상 값을 가져와서 배경 색상으로 설정
+          var selectedColor = event.target.value;
+          document.body.style.backgroundColor = selectedColor;
+        }
+
+        function resetBackgroundColor() {
+            // 배경 색상을 흰색으로 리셋
+            document.body.style.backgroundColor = "#fffefc";
+        }
+      </script>
 </body>
 </html>

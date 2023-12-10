@@ -49,16 +49,16 @@
    --text-on-dark-color: white;
  }
  
- .app-styleguide {
+ .app {
    font-family: "Helvetica", sans-serif;
    margin-top: 16px
  }
  
- .app-styleguide > * {
+ .app > * {
    margin-top: 16px
  }
  
- .app-styleguide button {
+ .app button {
    --background-color: lightgray;
    --hover-bg-color: gray;
    --color: black;
@@ -72,22 +72,22 @@
    color: var(--color);
  }
  
- .app-styleguide button:hover {
+ .app button:hover {
    background: var(--hover-bg-color);
  }
  
- .app-styleguide button:disabled {
+ .app button:disabled {
    opacity: 0.5;
    cursor: not-allowed;
  }
  
- .app-styleguide button.btn-primary {
+ .app button.btn-primary {
    --background-color: var(--primary-color);
    --hover-bg-color: var(--primary-hover-color);
    --color: var(--text-on-dark-color);
  }
  
- .app-styleguide a {
+ .app a {
    --color: var(--primary-color);
    --hover-color: var(--primary-hover-color);
  
@@ -95,12 +95,12 @@
    color: var(--color);
  }
  
- .app-styleguide a:hover {
+ .app a:hover {
    font-size: 1rem;
    color: var(--hover-color);
  }
  
- .app-styleguide input {
+ .app input {
    --border-color: var(--primary-border-color);
    --background-color: var(--primary-border-color);
    
@@ -111,12 +111,12 @@
    background-color: var(--background-color);
  }
  
- .app-styleguide input:focus {
+ .app input:focus {
    --background-color: white;
  }
  
- .whiteLabel,
- .whiteLabel > span {
+ .colorSet,
+ .colorSet > span {
    display: flex;
    align-items: center;
    justify-content: flex-start;
