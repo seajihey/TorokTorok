@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
     <link rel="stylesheet" href="../css/review.css">
+    <link rel="stylesheet" href="../css/detail_review.css">
     <link rel="stylesheet" href="../css/bootstrap_css/bootstrap.css">
 
     <title>토록토록</title>
@@ -45,9 +45,22 @@
                 <input type="text" id="title" placeholder="제목을 입력하세요.">
                 <div class="review_option_box">
                     <div class="review_option">
-                        <div class="label">날짜</div> <input type="date"><br>
+                        <div class="label">날짜</div> <input id="date" type="date"><br><br>
                         <div class="label">무드</div><br>
-                        <div class="label">태그</div><br> <select></select><br>
+                        <div class="mood">
+                            <span class="badge rounded-pill">신나는</span>
+                            <span class="badge rounded-pill">무서운</span>
+                            <span class="badge rounded-pill">감동있는</span>
+                            <span class="badge rounded-pill">생각이 깊어지는</span>
+                        </div>
+                        <br>
+                        <div class="label">태그</div><br>
+                        <select class="select" id="tags">
+                            <option selected name="tags" value="movie">영화</option>
+                            <option name="tags" value="drama">드라마</option>
+                            <option name="tags" value="book">책</option>
+                        </select>
+                        <br><br>
                             <div class="label">별점</div> 
                                 <div class="rating_box">
                                     <div class="rating"> ★★★★★
@@ -55,18 +68,74 @@
                                     <input type="range" value="1" step="1" min="0" max="10">
                                     </div>
                                 </div><br>
-                        <div class="label">진행도</div><br>
-                        <input type="range" value="1" step="1" min="0" max="10">
+                        <div class="progress_header">
+                            <div class="label">진행도</div>
+                            <span id="per"><span id="progress_value"></span>%</span>
+                        </div>
+                        <input id="progress" type="range" value="100" step="5" min="0" max="100">
                     </div>
                 </div>
             </article>
             <article class="bottom_content">
-                <div class="review_title"><span id="label">리뷰</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 16" fill="none">
-                    <path d="M12 6.26795C13.3333 7.03775 13.3333 8.96225 12 9.73205L3 14.9282C1.66667 15.698 1.99572e-07 14.7358 1.81212e-07 13.1962L5.72853e-08 2.80385C3.89258e-08 1.26425 1.66667 0.301996 3 1.0718L12 6.26795Z" fill="#404040"/>
-                  </svg></div>
+                <div class="review_title"><span id="label">리뷰</span>
+                    <span>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 16" fill="none">
+                                <path d="M12 6.26795C13.3333 7.03775 13.3333 8.96225 12 9.73205L3 14.9282C1.66667 15.698 1.99572e-07 14.7358 1.81212e-07 13.1962L5.72853e-08 2.80385C3.89258e-08 1.26425 1.66667 0.301996 3 1.0718L12 6.26795Z" fill="#404040"/>
+                          </svg>
+                        </button>
+                    </span>
+                </div>
                 <textarea id="textarea" rows="7" cols="15" placeholder="클릭하여 리뷰를 작성하세요. 화살표 클릭시 더 많은 리뷰를 작성할 수 있습니다."></textarea>
             </article>
         </form>
+    </section>
+    <section>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="head">
+                <button type="button" class="text-reset" data-bs-dismiss="offcanvas">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="27" viewBox="0 0 15 27" fill="none">
+                    <path d="M12.7953 26.1411L0.203665 13.5495L12.7953 0.957898L14.3525 2.53741L3.34044 13.5495L14.3525 24.5616L12.7953 26.1411Z" fill="black"/>
+                  </svg>
+                </button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32" fill="none">
+                <path d="M5.00125 9.99925L7.0015 30H23L25.0003 9.99925M17.6257 22.125V13.375M12.3757 22.125V13.375M2 6.0005H10.001M10.001 6.0005L10.6695 3.32475C10.7643 2.94632 10.9828 2.61041 11.2904 2.3704C11.5979 2.13038 11.9769 2.00001 12.367 2H17.6345C18.0246 2.00001 18.4036 2.13038 18.7111 2.3704C19.0187 2.61041 19.2372 2.94632 19.332 3.32475L20.0005 6.0005M10.001 6.0005H20.0005M20.0005 6.0005H28.0015" stroke="#404040" stroke-width="2.625" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg></div>
+
+            <form class="obj">
+                <article class="one_line_review">
+                    <div class="d_label">한줄평</div><br>
+                    <input id="one_line_review_text" type="text" placeholder="한줄평을 작성해 보세요.">
+                </article>
+                <article class="detail_review">
+                    <div class="detail_review_header">
+                        <div class="d_label">상세리뷰</div>
+                        <div class="text_effects">
+                            <svg class="text_effect" xmlns="http://www.w3.org/2000/svg" width=" 18" height="18" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="black"/>
+                                </svg>
+                            <svg class="text_effect" xmlns="http://www.w3.org/2000/svg" width="15" height="21" viewBox="0 0 17 23" fill="none">
+                                <path d="M0.09375 23V0.375H8.75C13.6562 0.375 16.0938 2.875 16.0938 6.25C16.0938 9 14.3438 10.5312 12.125 11.0625V11.2812C14.5312 11.4062 16.9688 13.4062 16.9688 16.8438C16.9688 20.375 14.4375 23 9.25 23H0.09375ZM8.625 19.5938C11.5938 19.5938 12.8438 18.3125 12.8438 16.5312C12.8438 14.5 11.25 12.9375 8.71875 12.9375H4.15625V19.5938H8.625ZM8.25 10C10.4062 10 12.0312 8.75 12.0312 6.75C12.0312 5 10.7812 3.75 8.34375 3.75H4.15625V10H8.25Z" fill="black"/>
+                                </svg>
+                            <svg class="text_effect" xmlns="http://www.w3.org/2000/svg" width="5" height="21" viewBox="0 0 5 23" fill="none">
+                                <path d="M4.15625 0.375V23H0.09375V0.375H4.15625Z" fill="black"/>
+                                </svg>
+                            <svg class="text_effect" xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 23 31" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4688 0.375H16.375V14.8125C16.375 17.6562 14.4062 19.7188 11.2812 19.7188C8.15625 19.7188 6.15625 17.6562 6.15625 14.8125V0.375H2.09375V15.1562C2.09375 20 5.75 23.3438 11.2812 23.3438C16.7812 23.3438 20.4688 20 20.4688 15.1562V0.375ZM23 26.8437L0.375 26.8438V30.9062L23 30.9062V26.8437Z" fill="black"/>
+                                </svg>
+                        </div>
+                    </div>
+                    <textarea id="detail_textarea" rows="7" cols="15" 
+                    placeholder="오늘 본 작품에 대해 하고 싶은 말이 많을 때 상세리뷰를 사용해 보세요. 
+    
+작품을 보며 든 생각이나 느낀 점, 들었던 감정과 좋았던 부분, 싫었던 부분까지 전부 털어 놓으세요. 
+친구에게 내 생각을 공유할 수도, 아무도 모르게 비밀에 부칠 수도 있습니다.
+                    
+글 머릿말과 강조표시, 밑줄 등의 기능을 사용할 수 있습니다."></textarea>
+                </article>
+            </form>
+
+        </div>
     </section>
 </body>
 </html>

@@ -25,14 +25,14 @@ export class Nav{
     
             if(textElement){
                 textElement.style.color = "#E97E41";
-                textElement.classList.remove('unactive'); // unactive 클래스 제거
+                textElement.classList.remove('nav_unactive'); // unactive 클래스 제거
 
             }
             if(ImgElement){
-                ImgElement.classList.add('active');
+                ImgElement.classList.add('nav_active');
             }
             else{
-             ImgElement.classList.remove('active');
+             ImgElement.classList.remove('nav_active');
              textElement.style.color="none;"   
             }
         }

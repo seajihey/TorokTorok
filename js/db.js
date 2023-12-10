@@ -47,6 +47,7 @@ export class Db{
     record = [
         {"code":"seojihye",
         "title":"그대들은 어떻게 살 것인가",
+        "image":"",
         "score":5,
         "date":"2023.01.01",
         "mood":"신기한 무서운 불행한",
@@ -55,7 +56,43 @@ export class Db{
         "progress":"80",
         "detailReview":"첨엔 뭔 말인지 몰랐삼 ㅋㅋ.그냥 지브리를 영화관에서 보는 의미에서 좋았을 뿐...",
         "oneLineReview":"정말정말 재미가 있었다."
-        }
+        },
+
+        {"code":"seojihye",
+        "title":"안녕",
+        "date":"2023.02.22",
+        "tag":"영화"
+        },
+        {"code":"seojihye",
+        "title":"안녕",
+        "date":"2023.03.22",
+        "tag":"영화"
+        },
+        {"code":"seojihye",
+        "title":"안녕",
+        "date":"2023.04.22",
+        "tag":"영화"
+        },
+        {"code":"seojihye",
+        "title":"안녕",
+        "date":"2023.04.22",
+        "tag":"영화"
+        },
+        {"code":"seojihye",
+        "title":"안녕",
+        "date":"2023.04.22",
+        "tag":"영화"
+        },
+        {"code":"seojihye",
+        "title":"안녕",
+        "date":"2023.04.22",
+        "tag":"영화"
+        },
+        {"code":"seojihye",
+        "title":"안녕",
+        "date":"2023.10.22",
+        "tag":"영화"
+        },
     ]
 
 }

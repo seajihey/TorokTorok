@@ -1,13 +1,13 @@
-class review{
+class Review{
 
     constructor(){
-        // home 파라미터 자리에 자기 html페이지 이름 , nav 파라미터 자리에 자기 html속 nav id넣기!!
 
-        //2. 여기에 실행 순서대로 추가함니다 !!
         //드래그 앤 드랍
         this.dragAndDrop();
-        // this.get_tags();
+
+        this.date();
         this.star();
+        this.progress();
     }
 
     dragAndDrop(){
@@ -57,13 +57,18 @@ class review{
                 alert('이미지가 아닙니다.');
                 return;
             }
-        
         }
     }
+    // db.recode.appendChild()
+    // console.log(files[0])
 
     // get_tags(){
     //     tags = 
     // }
+
+    date(){
+        document.getElementById('date').value = new Date().toISOString().substring(0, 10);;
+    }
 
 
 
@@ -73,7 +78,19 @@ class review{
           }
     }
 
+    progress(){
+        var slider = document.getElementById("progress");
+        var output = document.getElementById("progress_value");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    }
+
+
+
 }
 window.onload = () =>{
-    new review();
+    new Review();
 }

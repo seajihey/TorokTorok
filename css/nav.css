@@ -88,12 +88,16 @@ a {
 }
 
 /* unactive = 안보이게하고 js로 보이게설정하기 */
-.unactive{
+.nav_unactive{
     display: none;
 }
-.active{
+.nav_active{
     filter: invert(68%) sepia(23%) saturate(5638%) hue-rotate(334deg) brightness(97%) contrast(87%);
 }
+
+/* .active :not(.nofilter){
+    filter: invert(68%) sepia(23%) saturate(5638%) hue-rotate(334deg) brightness(97%) contrast(87%);
+} */
 
 
 

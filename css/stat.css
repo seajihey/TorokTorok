@@ -12,7 +12,8 @@ body{
     /* transition: background-color 1s ease; */
     overflow: hidden;
     background-color: rgba(255, 254, 252, 1);
-    /* letter-spacing: -2.56px; */
+    letter-spacing: -1px;
+    font-family: "Pretendard-Regular";
   }
 
 .nav_section{
@@ -34,17 +35,94 @@ body{
   letter-spacing: -2px;
 }
 
+/*--------------왼쪽-------------*/
 
 .left_content{
   position: relative; 
   float: left;
-  width: 28vw; height: 77vh;
-  background-color: gray;
+  width: 28vw; height: 75vh;
+  /* background-color: gray; */
+}
 
+.carousel{
+  height: 72vh;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ACA7A6 !important;
 }
 
 
-/*오른쪽*/
+.carousel-control-prev-icon{
+  background-image: url(/icon/arrow-prev.svg) !important;
+}
+.carousel-control-next-icon{
+  background-image: url(/icon/arrow-next.svg) !important;
+}
+
+
+
+
+.date_check{
+  padding-top: 2vh; padding-bottom: 2vh;
+}
+
+/* <select> styles */
+
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url("./icon/caret-down-solid.svg");
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  
+  /* Personalize */
+  width: 8vw;
+  padding-top: 1vh; padding-bottom: 1vh; padding-left: .7vw;
+  background:url('/icon/caret-down-solid.svg') no-repeat right .7vw center;
+  background-color: rgba(255, 254, 252, 1);
+  color: black;
+  border-radius: 0.25em;
+  box-shadow: .05vw .05vh .1em 0 rgba(163, 163, 163, 0.2);
+  border: 1.8px solid #e7e7e7;
+  cursor: pointer;
+  
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+}
+
+.select{
+  font-family: "Pretendard-Regular"
+}
+
+/* <option> colors */
+option {
+  font-family: "Pretendard-Regular";
+  color: inherit;
+  background-color: var(--option-bg);
+}
+
+
+/*----------차트---------*/
+
+#chart1_div, #chart2_div{
+  height: 67vh;
+}
+
+
+
+/*--------------오른쪽-------------*/
 .right_content{
   position: relative; 
   float: right;
@@ -56,7 +134,52 @@ body{
   float: right;
 }
 
+.right_content_box{
+  width: 28vw; height: 70vh;
+  background-color: rgba(244, 243, 242, 0.921);
+}
+
+.select_box_right{
+  padding-top: 1.5vh; padding-bottom: 2.8vh; padding-left: 1vw;
+
+}
+
 .view_month_record{
-  width: 28vw; height: 72vh;
-  background-color: rgba(252, 250, 247, 0.968);
+  width: 28vw; height: 65vh;
+  background-color: rgba(244, 243, 242, 0.921);
+}
+
+.inner-section{
+  margin: 0 auto;
+  width: 24vw; height: 60vh;
+  background-color: rgba(255, 254, 252, 1);
+  position: relative;
+  scroll-snap-align: start;
+  overflow-y: scroll;
+}
+
+.inner-content{
+  width: 24vw; height: 17vh;
+  box-shadow: 0 0 .2em 0 rgba(0, 0, 0, 0.25);
+  /* border: 1px solid #000; */
+}
+
+.month-content{
+  padding-left: 1.7vw; padding-top: .5vw;
+}
+
+.month_record_img{
+  float: left;
+  width: 5vw; height: 15vh;
+  background-color: blue;
+}
+
+.month_record_text{
+  padding-left: 1vw; padding-top: 1vh;
+  float: inline-start;
+}
+
+.month_record_title{
+  font-family: "Pretendard-Bold";
+  font-size: 1.2vw;
 }
