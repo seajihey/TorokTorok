@@ -112,7 +112,7 @@
         }
     </style>
 </head>
-<body>
+<body class="body">
     <nav id="nav">
 
     </nav>
@@ -130,7 +130,7 @@
     
     <div id="text">
         <div id="maintext">메인</div>
-        <div id="subtext">서브</div>
+        <div id="subtext">글자색</div>
         <div id="backtext">배경</div>
     </div>
     <!--https://webactually.com/2021/02/05/
@@ -140,8 +140,8 @@
     <div>
         <div class="colorSet">
             <span><input class="main-color" type="color" id="main" value /></span>
-            <span><input class="sub-color" type="color" id="sub" value /></span>
-            <span><input type="color" id="back" name="colorPicker" onchange="changeBackgroundColor(event)"></span>
+            <span><input type="color" class="sub-color" id="sub" value /></span>
+            <span><input type="color" id="back" onchange="changeBackgroundColor(event)"></span>
             <div id="button">
                 <button class="revert" onclick="resetBackgroundColor()">재설정</button><br><br>
                 <button class="import">저장 셋업 불러오기</button>
@@ -160,6 +160,12 @@
           // 선택된 색상 값을 가져와서 배경 색상으로 설정
           var selectedColor = event.target.value;
           document.body.style.backgroundColor = selectedColor;
+        }
+
+        function changeTextColor(event) {
+            // Get the selected color
+            var selectedColor = event.target.value;
+            document.body.style.color = selectedColor;
         }
 
         function resetBackgroundColor() {
