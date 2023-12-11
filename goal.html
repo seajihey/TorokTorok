@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- favicon 들어갈 자리 수정필요없음-->
+    <link
+    rel="icon"
+    href="image/dog.svg"
+    type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="image/dog.svg"
+      type="image/x-icon"
+    />
+    <script type="module" src="js/nav.js" defer></script>
+    <script type="module" src="js/setting.js" defer></script>
+
+    <title>토록토록</title>
+    <style>
+        @font-face {
+            font-weight: 300;
+            font-family: "Pretendard-Light";
+            src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+            format("woff");
+        }
+        @font-face {
+            font-family: 'SangSangYoungestDaughter';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            background-color: #fffefc;
+        }
+        h2 {
+            margin-left: 20vw;
+            margin-right: auto;
+            font-family: 'SangSangYoungestDaughter';
+            font-size: 40px;
+        }
+        #main {
+            font-family: "Pretendard-Light";
+            margin-left: 20vw;
+            margin-right: auto;
+            font-size: 25px;
+        }
+        a {
+            text-decoration-line: none;
+        }
+        button {
+            background-color: #fffefc;
+            border: 1px solid #fffefc;
+            font-size: 30px;
+            font-family: 'SangSangYoungestDaughter';
+            padding-left: 2vw;
+        }
+        #userInput {
+            width:900px;
+            height:300px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #c4c4c4;
+            font-family: 'Pretendard-Light'; 
+            font-size: 25px;
+        }
+        #num {
+            width: 150px; 
+            height: 50px; 
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #c4c4c4;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function saveData() {
+            var userInput = document.getElementById('userInput').value; // input 요소의 값을 가져옴
+            localStorage.setItem('savedData', userInput); // 'savedData'라는 키로 데이터를 저장
+
+            // 데이터 불러오기
+            var savedData = localStorage.getItem('savedData'); // 'savedData' 키의 데이터를 가져옴
+            if (savedData) {
+                document.getElementById('userInput').value = savedData; // 가져온 데이터를 input 요소에 설정
+            }
+        }
+    </script>
+</head>
+<body onload="loadData()">
+    <nav id="nav">
+
+    </nav>
+    <div class="container">
+        
+    </div>
+
+    <br>
+    <br>
+    <h2>설정</h2>
+    <div id="main">
+        <h4> <a href="../setting.html"> < </a> 목표 설정</h4>
+        <p>한 달동안 몇 개의 기록을 할 지 정해보세요. 통계에서 확인할 수 있습니다.</p>
+        <h4>한 달 목표 기록 개수</h4>
+        <input type="number" min="1" id="num" >
+        <h4>나의 목표</h4>
+        <textarea placeholder ="나만의 목표를 작성한 뒤, 다음에 확인 해 보세요 :)" id="userInput"></textarea>
+        <span><button onclick="saveData()">저장</button></span>
+    </div>
+
+</body>
+</html>
