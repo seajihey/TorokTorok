@@ -1,12 +1,13 @@
-class review{
+class Review{
 
     constructor(){
-        // home 파라미터 자리에 자기 html페이지 이름 , nav 파라미터 자리에 자기 html속 nav id넣기!!
 
-        //2. 여기에 실행 순서대로 추가함니다 !!
         //드래그 앤 드랍
         this.dragAndDrop();
-        this.star();
+
+        this.date();
+        // this.star();
+        this.progress();
     }
 
     dragAndDrop(){
@@ -38,33 +39,58 @@ class review{
         
             e.dataTransfer = e.originalEvent.dataTransfer;
             var files = e.target.files || e.dataTransfer.files;
+            
+            
             if (files.length > 1) {
                 alert('하나만 올려라.');
                 return;
             }
             if (files[0].type.match(/image.*/)) {
-                        $(e.target).css({
+                $(e.target).css({
                     "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
                     "outline": "none",
                     "background-size": "100% 100%"
                 });
+                let info = document.getElementById("content_info");
+                info.style.display = "none";
             }else{
-            alert('이미지가 아닙니다.');
-            return;
+                alert('이미지가 아닙니다.');
+                return;
             }
         }
     }
-    star(){
-        const rating_input = document.querySelector('.rating input');
-        const rating_star = document.querySelector('.rating_star');
+    // db.recode.appendChild()
+    // console.log(files[0])
 
-        // 별점 드래그 할 때
-        rating_input.addEventListener('input', () => {
-        rating_star.style.width = `${rating_input.value * 10}%`;
-        });
+    // get_tags(){
+    //     tags = 
+    // }
+
+    date(){
+        document.getElementById('date').value = new Date().toISOString().substring(0, 10);;
     }
+
+
+
+    // star(){
+    //     const drawStar = (target) => {
+    //         document.querySelector('.star span').style.width = '${target.value * 10}%';
+    //       }
+    // }
+
+    progress(){
+        var slider = document.getElementById("progress");
+        var output = document.getElementById("progress_value");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    }
+
+
 
 }
 window.onload = () =>{
-    new review();
+    new Review();
 }

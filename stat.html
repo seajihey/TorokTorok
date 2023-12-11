@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>토록토록</title>
+    
+    <link
+    rel="icon"
+    href="./image/dog.svg"
+    type="image/x-icon"
+    />
+    <link
+    rel="shortcut icon"
+    href="./image/dog.svg"
+    type="image/x-icon"
+    />
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap_js/bootstrap.js"></script>
+    <script src="./js/bootstrap_js/bootstrap.bundle.min.js"></script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <script type="module" src="./js/stat.js" defer></script>
+    <script type="module" src="/js/nav.js" defer></script>
+    
+    <link rel="stylesheet" href="./css/stat.css">
+    <link rel="stylesheet" href="./css/bootstrap_css/bootstrap.css">
+
+</head>
+<body>
+<script>
+      function get_year(){
+        let result =[];
+        const year_check = document.getElementById('year_check_right');
+        result.year_check = year_check.options[year_check.selectedIndex].value;
+  }
+</script>
+
+    <!--         nav            -->
+    <div class="nav_section">
+        <nav id="nav">
+        </nav>
+    </div>
+    
+    <section class="section">
+        <div class="title">통계</div>
+
+        <article class="left_content">
+
+          <div class="date_check">
+            <select class="select" id="year_check_right" onchange="get_year()">
+              <option selected name="year_check_right" value="1">2023년</option>
+              <option name="year_check_right" value="2">2022년</option>
+            </select>
+          </div>
+          
+          <!-- bootstrap carousel 사용-->
+          <div id="carouselExampleIndicators" class="carousel slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active nofliter">
+                  <!-- google chart : column 사용 -->
+                  <!-- <div id="chart1_title">연간 기록 수</diㅈv> -->
+                  <div id="chart1_div"></div>
+                </div>
+                <div class="carousel-item nofliter">
+                  <div id="chart2_div"></div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </article>
+
+        <article class="right_content">
+            <div style="height: 5vh;"><svg id="glass" xmlns="http://www.w3.org/2000/svg" width="2vw" height="4vh" viewBox="0 0 44 44" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7364 6.63188C13.1825 4.9974 16.0584 4.125 19.0004 4.125V5.5L19.0005 4.125C22.9455 4.12525 26.7288 5.6925 29.5183 8.48202C32.3078 11.2715 33.8751 15.0549 33.8753 18.9998V18.9999C33.8753 21.9419 33.0029 24.8178 31.3685 27.264C29.734 29.7102 27.4108 31.6167 24.6928 32.7426C21.9748 33.8684 18.9839 34.163 16.0985 33.589C13.213 33.0151 10.5626 31.5984 8.48226 29.5181C6.40196 27.4378 4.98526 24.7873 4.41131 21.9019C3.83736 19.0164 4.13193 16.0256 5.25778 13.3075C6.38363 10.5895 8.29019 8.26635 10.7364 6.63188ZM19.0004 6.875C22.2161 6.87523 25.3 8.15274 27.5738 10.4266C29.8476 12.7004 31.1251 15.7843 31.1253 18.9999M19.0003 6.875C16.6023 6.87502 14.2581 7.58613 12.2642 8.91842C10.2702 10.2507 8.71616 12.1444 7.79845 14.3599C6.88074 16.5755 6.64063 19.0134 7.10847 21.3654C7.57631 23.7174 8.7311 25.8778 10.4268 27.5735C12.1225 29.2692 14.283 30.424 16.635 30.8919C18.987 31.3597 21.4249 31.1196 23.6404 30.2019C25.856 29.2842 27.7496 27.7301 29.0819 25.7362C30.4142 23.7423 31.1253 21.3981 31.1253 19" fill="#404040"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M28.1 28.0997C28.637 27.5628 29.5076 27.5628 30.0445 28.0997L39.4727 37.528C40.0097 38.0649 40.0097 38.9355 39.4727 39.4725C38.9358 40.0095 38.0652 40.0095 37.5282 39.4725L28.1 30.0443C27.563 29.5073 27.563 28.6367 28.1 28.0997Z" fill="#404040"/>
+              </svg></div>
+            <div class="right_content_box">
+              <div class="select_box_right select">
+                <select class="select_year_right">
+                  <option selected value="0">2023년</option>
+                  <option value="1">2022년</option>
+                </select>
+                <select class="select_month_right select">
+                  <option selected value="0">월</option>
+                  <option value="1">10월</option>
+                  <option value="2">11월</option>
+                  <option value="3">12월</option>
+              </select>
+              </div>
+                <div class="view_month_record">
+                  <div class="inner-section">
+                    <!-- <div class="inner-content">
+                      <div class="month-content">
+                        <div class="month_record_img">
+                        </div>
+                        <div class="month_record_text">
+                          <div class="month_record_title">
+                          </div>
+                          <div class="month_record_date">
+                          </div>
+                          <div class="month_record_oneline">
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+
+            </div>
+        </article>
+         
+    </section>
+
+</body>
+</html>

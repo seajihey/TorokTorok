@@ -1,0 +1,265 @@
+@import url("../css/font.css");
+
+
+* ::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    /* transition: background-color 1s ease; */
+    overflow: hidden;
+    
+  }
+
+
+/*배경 확인용*/
+body{
+    background-color: rgb(56, 56, 56);
+}
+
+.section1{
+  float: right;
+  background-color: white;
+  width: 45vw; height: 100vw;
+}
+
+.head{
+  position: relative;
+  width: 40.5vw;
+  top: 5.5vh; left: 1.8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.obj{
+  padding-top: 9vh; 
+  padding-left: 3vw; padding-right: 3vw;
+}
+
+*::placeholder{
+  /* padding-left: 1vw; padding-top: 1.5vh; */
+  font-family: "Pretendard-Regular";
+  font-size: .8vw;
+  color: #BEBEBE;
+
+}
+
+.content{
+  float: left;
+  text-align: center;
+  /* transition: all .15s ease-in-out; */
+  width: 18vw; height: 52.8vh;  
+  
+  background-color: rgba(217, 217, 217, 0.45);
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
+}
+
+ #content_info{
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  color: #BEBEBE;
+  padding-top: 25.5vh;
+}
+
+
+
+
+
+
+.right_content{
+  float: right;
+  width: 18vw;
+}
+
+#title{
+  width: 17vw; height: 6vh;
+  padding-left: 1vw;
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
+}
+
+.review_option_box{
+  position: relative;
+  top: 3.8vh;
+  border: 1.5px solid rgba(0, 0, 0, 0.35);
+  width: 18vw; height: 42.5vh;
+}
+
+.review_option{
+  width: 15vw; height: 38vh;
+  padding-left: 1.5vw; padding-top: 3vh;
+}
+
+.label{
+  display: inline;
+  float: left;
+  font-family: "Pretendard-Regular";
+  font-size: .9vw;
+  padding-bottom: 1vh;
+}
+
+.part{
+  padding-bottom: 1.8vh;
+}
+
+/* ---날짜---*/
+#date{
+  padding-left: 1vw;
+  border: 0;
+  font-family: 'omyu_pretty';
+  font-size: 1vw;
+}
+
+/*----무드 ----*/
+.badge{
+  font-family: "Pretendard-Light";
+  font-size: .8vw !important;
+  font-weight: 100 !important;
+  background-color: #BEBEBE;
+}
+
+.mood{
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+
+
+/*----태그 ----*/
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  
+  /* Personalize */
+  width: 100%;
+  padding-top: 1vh; padding-bottom: 1vh; padding-left: .7vw;
+  background:url('/icon/caret-down-solid.svg') no-repeat right .7vw center;
+  background-color: rgba(255, 254, 252, 1);
+  color: black;
+  border-radius: 0.25em;
+  box-shadow: .05vw .05vh .1em 0 rgba(163, 163, 163, 0.2);
+  border: 1.8px solid #e7e7e7;
+  cursor: pointer;
+  
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+}
+
+.select{
+  font-family: "Pretendard-Regular"
+}
+
+/* <option> colors */
+option {
+  font-family: "Pretendard-Regular";
+  color: inherit;
+  background-color: var(--option-bg);
+}
+
+
+/*----별점----*/
+.rating_box {
+  display: flex;
+  /* display: inline;
+  position: relative;
+  float: right; */
+}
+
+.rating {
+  position: relative;
+  color: #ddd;
+  font-size: 30px;
+  text-align: center;
+}
+
+.rating input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rating_star {
+  width: 0;
+  color: #ffc107;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/*-----진행도----*/
+
+.progress_header{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+#progress{
+  width: 100%;
+  /* background: linear-gradient(to right, #FFE283 0%, #FFE283 50%, #ececec 50%, #ececec 100%); */
+  border-radius: 8px;
+  outline: none;
+  /* transition: background 450ms ease-in; */
+  --webkit-appearance: none;
+  accent-color: #fd7526;
+}
+
+#per, #progress_value{
+  font-family: 'omyu_pretty';
+  font-size: 1vw;
+}
+
+
+
+.bottom_content{
+    clear: both;
+    padding-top: 4.5vh;
+  }
+ 
+.review_title{
+  padding-bottom: .8vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#label{
+  font-family: "Pretendard-Regular";
+  font-size: 1vw;
+  position: relative;
+}
+
+#textarea{
+  width: 38vw; height: 17vh;
+  padding-left: 1vw; padding-top: 1.5vh;
+  resize: none;
+}
+
+.btn, .btn-primary, .text-reset{
+  border: 0 !important;
+  background-color: #fff !important;
+
+}
+
+.offcanvas{
+  width: 45vw !important; 
+  height: 100vw!important;
+
+}
