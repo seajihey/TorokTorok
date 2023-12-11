@@ -68,6 +68,7 @@ body{
     padding-top: 8vh;
     padding-left:25vw;
     padding-right: 25vw;
+    position: absolute;
 }
 .fTitle{
     font-family:'omyu_pretty' ;
@@ -107,6 +108,7 @@ body{
     text-align: center;
     border-radius:1rem ;
     color : white;
+    cursor: pointer;
     
 }
 
@@ -204,15 +206,18 @@ body{
 }
 
 .user{
-    display: flex;
     margin:3vh 5vw 0 5vw;
     width: 40vw;
     padding-bottom: 3vh;
     border-bottom: 1px solid rgb(172, 172, 172);
     font-family: "Pretendard-regular";
     font-size: 1rem;
+    
 
 
+}
+.wrapUser{
+    margin-top: 5vh;
 }
 .fsfname{
     font-family: 'omyu_pretty';
@@ -244,10 +249,85 @@ body{
     display: flex;
     text-align: center;
 }
-.fsfrecord{
+
+
+
+/* 친구추가 팝업 세션 */
+.addFriends{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+    z-index: 99999999;
+    
+}
+.popup{
+    width: 25vw;
+    height: 20vh;
+    background-color: white;
+    border-radius: 2rem;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-12.5vw;
+    margin-top:-10vw;
+    
+}
+.popupText{
+    font-family: "Pretendard-Bold";
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:6vh
 
 }
-.fsfreview{
-
+.popupInput{
+    height: 3vh;
+    border:1px solid rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    color: rgba(0,0,0,0.2);
+    padding-left: 1vw;
+}
+.popupInput:focus{
+    height: 3vh;
+    border:1px solid rgba(0,0,0,0.8);
+    border-radius: 0.5rem;
+    color: rgba(0,0,0,1);
+    padding-left: 1vw;
+}
+.popupExit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:3vh;
+}
+.exitFriend{
+    margin:0 1vw 0 0;
+    width: 5vw;
+    text-align: center;
+    padding: 0.5vh 0 0.5vh 0 ;
+    border-radius: 1rem;
+    color: white;
+    background-color: #E97E41;
+    cursor: pointer;
+}
+.addFriend{
+    margin:0 0 0 1vw;
+    width: 5vw;
+    text-align: center;
+    padding: 0.5vh 0 0.5vh 0 ;
+    border-radius: 1rem;
+    color: white;
+    background-color: #E97E41;
+    cursor: pointer;
 }
 
+.twice{
+    position: relative;
+    width: 12vw;
+    color: red;
+    margin: 0 auto;
+    top: 19.5vw;
+}
