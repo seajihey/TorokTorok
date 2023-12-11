@@ -89,19 +89,21 @@ body{
 .fS1{
     margin:0.5vw 0.5vw 0.5vw 0;
     opacity: 0.5;
+    cursor: pointer;
 
 }
 .fS2{
     margin:0.5vw 0.5vw 0.5vw 0.5vw;
     opacity: 0.5;
+    cursor: pointer;
 
 }
 .fplus{
     margin:0.5vw 0 0.5vw 0.5vw;
     background-color:#E97E41 ;
-    font-family: "Pretendard-Medium";
+    font-family: "Pretendard-bold";
     font-size: 1rem;
-    padding:0.7vh 0.7vw;
+    padding:0.7vh 1vw;
     text-align: center;
     border-radius:1rem ;
     color : white;
@@ -117,8 +119,9 @@ body{
     display: flex;
     align-items: center;
     background-color: white;
-    background-color: rgb(239, 239, 239);
+    border:1px solid rgb(203, 203, 203);
     border-radius: 1rem;
+    margin-bottom: 1.5vh;
     
 }
 .fprofile{
@@ -161,7 +164,7 @@ body{
     align-items: center; 
     margin-left: auto;
     font-family: 'omyu_pretty';
-    font-size: 1rem;
+    font-size: 1.2vw;
     margin-right: 1vw;
 }
 .fseeCalText{

@@ -20,27 +20,25 @@ class Firends{
     }
     /*페이지 선택에따라 unacitve속성 와리가리 */
     setPaging(){
-        this.firstpage = document.querySelector('.firstpage');
-        this.secondpage = document.querySelector('.secondpage');
+            const firstpage = document.querySelector('.firstPage');
+            const secondpage = document.querySelector('.secondPage');
+            const selector1Btn = document.querySelectorAll('.fS1');
+            const selector2Btn = document.querySelectorAll('.fS2');
         
-        this.selector1Btn = document.querySelector('.fS1');
-        this.selector2Btn = document.querySelector('.fS2');
+            selector1Btn[1].addEventListener('click', () => {
+                secondpage.classList.add('unactive');
+                firstpage.classList.remove('unactive');
+                console.log("여러번되니?")
+            });
+        
+            selector2Btn[0].addEventListener('click', () => {
+                firstpage.classList.add('unactive');
+                secondpage.classList.remove('unactive');
+                console.log("여러번되니?")
+
+            });
 
         
-        this.selector1Btn.addEventListener('click',()=>{
-            //unactive초기화
-            this.firstpage.classList.remove('unactive');
-            this.secondpage.classList.remove('unactive');
-            this.secondpage.classList.add('unactive');
-        })
-
-
-        this.selector2Btn.addEventListener('click',()=>{
-            //unactive초기화
-            this.firstpage.classList.remove('unactive');
-            this.secondpage.classList.remove('unactive');
-            this.firstpage.classList.add('unactive');
-        })
 
     }
 
