@@ -118,6 +118,7 @@ option {
 
 #chart1_div, #chart2_div{
   height: 67vh;
+
 }
 
 
@@ -168,7 +169,7 @@ option {
   padding-left: 1.7vw; padding-top: .5vw;
 }
 
-.month_record_img{
+.month_record_img img{
   float: left;
   width: 5vw; height: 15vh;
   background-color: blue;
@@ -182,4 +183,12 @@ option {
 .month_record_title{
   font-family: "Pretendard-Bold";
   font-size: 1.2vw;
+  padding-bottom: .5vh;
+}
+
+.month_record_oneline{
+  font-family: "Pretendard-Light";
+  font-style: italic;
+  font-size: 1vw;
+  padding-top: 2vh;
 }

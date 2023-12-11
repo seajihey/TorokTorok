@@ -45,34 +45,42 @@
                 <input type="text" id="title" placeholder="제목을 입력하세요.">
                 <div class="review_option_box">
                     <div class="review_option">
-                        <div class="label">날짜</div> <input id="date" type="date"><br><br>
-                        <div class="label">무드</div><br>
-                        <div class="mood">
-                            <span class="badge rounded-pill">신나는</span>
-                            <span class="badge rounded-pill">무서운</span>
-                            <span class="badge rounded-pill">감동있는</span>
-                            <span class="badge rounded-pill">생각이 깊어지는</span>
+                        <div class="part">
+                            <div class="label">날짜</div> <input id="date" type="date"><br>
                         </div>
-                        <br>
-                        <div class="label">태그</div><br>
-                        <select class="select" id="tags">
-                            <option selected name="tags" value="movie">영화</option>
-                            <option name="tags" value="drama">드라마</option>
-                            <option name="tags" value="book">책</option>
-                        </select>
-                        <br><br>
+                        <div class="part">
+                            <div class="label">무드</div><br>
+                            <div class="mood">
+                                <span class="badge rounded-pill">신나는</span>
+                                <span class="badge rounded-pill">무서운</span>
+                                <span class="badge rounded-pill">감동있는</span>
+                                <span class="badge rounded-pill">생각이 깊어지는</span>
+                            </div>
+                        </div>
+                        <div class="part">
+                            <div class="label">태그</div><br>
+                            <select class="select" id="tags">
+                                <option selected name="tags" value="movie">영화</option>
+                                <option name="tags" value="drama">드라마</option>
+                                <option name="tags" value="book">책</option>
+                            </select>
+                        </div>
+                        <div class="part">
                             <div class="label">별점</div> 
                                 <div class="rating_box">
                                     <div class="rating"> ★★★★★
                                        <span class="rating_star">★★★★★</span>
                                     <input type="range" value="1" step="1" min="0" max="10">
                                     </div>
-                                </div><br>
-                        <div class="progress_header">
-                            <div class="label">진행도</div>
-                            <span id="per"><span id="progress_value"></span>%</span>
+                                </div>
                         </div>
-                        <input id="progress" type="range" value="100" step="5" min="0" max="100">
+                        <div class="part">
+                            <div class="progress_header">
+                                <div class="label">진행도</div>
+                                <span id="per"><span id="progress_value"></span>%</span>
+                            </div>
+                            <input id="progress" type="range" value="100" step="5" min="0" max="100">     
+                        </div>
                     </div>
                 </div>
             </article>

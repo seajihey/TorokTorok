@@ -6,7 +6,7 @@ class Review{
         this.dragAndDrop();
 
         this.date();
-        this.star();
+        // this.star();
         this.progress();
     }
 
@@ -72,11 +72,11 @@ class Review{
 
 
 
-    star(){
-        const drawStar = (target) => {
-            document.querySelector('.star span').style.width = '${target.value * 10}%';
-          }
-    }
+    // star(){
+    //     const drawStar = (target) => {
+    //         document.querySelector('.star span').style.width = '${target.value * 10}%';
+    //       }
+    // }
 
     progress(){
         var slider = document.getElementById("progress");
