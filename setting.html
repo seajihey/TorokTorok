@@ -7,17 +7,19 @@
     <!-- favicon 들어갈 자리 수정필요없음-->
     <link
     rel="icon"
-    href="../image/dog.svg"
+    href="image/dog.svg"
     type="image/x-icon"
     />
     <link
       rel="shortcut icon"
-      href="../image/dog.svg"
+      href="image/dog.svg"
       type="image/x-icon"
     />
 
     <script type="module" src="./js/setting.js" defer></script>
     <script type="module" src="./js/nav.js" defer></script>
+
+    <link rel="stylesheet" href="../css/toggleSwitch.css">
 
     <title>토록토록</title>
 
@@ -39,59 +41,18 @@
             background-color: #fffefc;
         }
         h2 {
-            margin-left: 300px;
+            margin-left: 20vw;
             margin-right: auto;
             font-family: 'SangSangYoungestDaughter';
+            font-size: 40px;
         }
         table {
             margin-left: auto;
             margin-right: auto;
             font-family: "Pretendard-Light";
+            font-size: 25px;
         }
-        .toggleSwitch {
-            width: 50px;
-            margin: 30px;
-            height: 25px;
-            display: block;
-            position: relative;
-            border-radius: 30px;
-            background-color: #fff;
-            box-shadow: 0 0 16px 3px rgba(0 0 0 / 15%);
-            cursor: pointer;
-        }
-
-        .toggleSwitch .toggleButton {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 50%;
-            left: 4px;
-            transform: translateY(-50%);
-            border-radius: 50%;
-            background: #e97e41;
-        }
-
-        .toggleSwitch.active {
-            background: #e97e41;
-        }
-
-        .toggleSwitch.active .toggleButton {
-            left: calc(100% - 22px);
-            background: #fff !important;
-        }
-
-        .toggleSwitch, .toggleButton {
-            transition: all 0.2s ease-in;
-        }
-
-        .toggleSwitch.active {
-            background: #e97e41;
-        }
-
-        .toggleSwitch.active .toggleButton {
-            left: calc(100% - 22px);
-            background: #fff;
-        }
+        
         a {
             text-decoration-line: none;
         }
@@ -104,25 +65,26 @@
     <div class="container">
         
     </div>
-
+    <br>
+    <br>
     <h2>설정</h2>
     <div class="center-table">
         <table>
             <tr>
                 <td>테마 색상 변경</td>
-                <td> <a href="./color.html"> > </a> </td>
+                <td> <a href="/color.html"> > </a> </td>
                 <td>친구 추가 받기</td>
                 <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
             </tr>
             <tr>
-                <td>달력 비율 설정</td> <!--달력 비율 설정 들어갔다 나오면 css 깨짐 ..-->
-                <td> <a href="./size.html"> > </a> </td>
+                <td>달력 비율 설정</td>
+                <td> <a href="/size.html"> > </a> </td>
                 <td>주 시작 요일: 일요일</td>
                 <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
             </tr>
             <tr>
                 <td>목표 설정</td>
-                <td> <a href="./goal.html"> > </a> </td>
+                <td> <a href="/goal.html"> > </a> </td>
                 <td>자동 로그인</td>
                 <td><label for="toggle" class="toggleSwitch"><span class="toggleButton"></span></label></td>
             </tr>

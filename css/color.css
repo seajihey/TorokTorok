@@ -1,0 +1,123 @@
+:root {
+    --green-color-h: 81;
+    --green-color-s: 50%;
+    --green-color-l: 41%;
+   
+    --red-color-h: 2;
+    --red-color-s: 50%;
+    --red-color-l: 45%;
+   
+    --blue-color-h: 183;
+    --blue-color-s: 49%;
+    --blue-color-l: 27%;
+ 
+    --green-color: hsl(var(--green-color-h), var(--green-color-s), var(--green-color-l));
+    --green-color-10: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 5%));
+    --green-color-20: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 10%));
+    --green-color-30: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 15%));
+    --green-color-40: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 20%));
+     --green-color-50: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 25%));
+     --green-color-60: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 30%));
+     --green-color-70: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 35%));
+     --green-color-80: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 40%));
+   
+     --red-color: hsl(var(--red-color-h), var(--red-color-s), var(--red-color-l));
+     --red-color-10: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 5%));
+     --red-color-20: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 10%));
+     --red-color-30: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 15%));
+     --red-color-40: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 20%));
+     --red-color-50: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 25%));
+     --red-color-60: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 30%));
+     --red-color-70: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 35%));
+     --red-color-80: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 40%));
+   
+     --blue-color: hsl(var(--blue-color-h), var(--blue-color-s), var(--blue-color-l));
+     --blue-color-10: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 5%));
+     --blue-color-20: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 10%));
+     --blue-color-30: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 15%));
+     --blue-color-40: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 20%));
+     --blue-color-50: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 25%));
+     --blue-color-60: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 30%));
+     --blue-color-70: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 35%));
+     --blue-color-80: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 40%));
+   
+   
+   /* App Theme / Brand */
+   --primary-color: var(--green-color-10);
+   --primary-border-color: var(--green-color-10);
+   --primary-hover-color: var(--green-color);
+   --text-on-dark-color: white;
+ }
+ 
+ .app {
+   font-family: "Helvetica", sans-serif;
+   margin-top: 16px
+ }
+ 
+ .app > * {
+   margin-top: 16px
+ }
+ 
+ .app button {
+   --background-color: lightgray;
+   --hover-bg-color: gray;
+   --color: black;
+   
+   font-size: 1rem;
+   width: 15em;
+   height: 4em;
+   border: 0.125em solid transparent;
+   border-radius: 0.5em;
+   background: var(--background-color);
+   color: var(--color);
+ }
+ 
+ .app button:hover {
+   background: var(--hover-bg-color);
+ }
+ 
+ .app button:disabled {
+   opacity: 0.5;
+   cursor: not-allowed;
+ }
+ 
+ .app button.btn-primary {
+   --background-color: var(--primary-color);
+   --hover-bg-color: var(--primary-hover-color);
+   --color: var(--text-on-dark-color);
+ }
+ 
+ .app a {
+   --color: var(--primary-color);
+   --hover-color: var(--primary-hover-color);
+ 
+   font-size: 1rem;
+   color: var(--color);
+ }
+ 
+ .app a:hover {
+   font-size: 1rem;
+   color: var(--hover-color);
+ }
+ 
+ .app input {
+   --border-color: var(--primary-border-color);
+   --background-color: var(--primary-border-color);
+   
+   font-size: 1rem;
+   padding: 0.25em;
+   border: 0.125em solid var(--border-color);
+   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+   background-color: var(--background-color);
+ }
+ 
+ .app input:focus {
+   --background-color: white;
+ }
+ 
+ .colorSet,
+ .colorSet > span {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+ }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- favicon 들어갈 자리 수정필요없음-->
+    <link
+    rel="icon"
+    href="image/dog.svg"
+    type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="image/dog.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/color.css">
+    <script type="module" src="../js/color.js" defer></script>
+
+    <script type="module" src="../js/nav.js" defer></script>
+    <script type="module" src="../js/setting.js" defer></script>
+
+    <title>토록토록</title>
+    <style>
+        @font-face {
+            font-weight: 300;
+            font-family: "Pretendard-Light";
+            src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+            format("woff");
+        }
+        @font-face {
+            font-family: 'SangSangYoungestDaughter';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #fffefc;
+        }
+        h4,p {
+            margin-left: 20vw;
+            margin-right: auto;
+            font-family: "Pretendard-Light";
+            font-size: 25px;
+        }
+        h2 {
+            margin-left: 20vw;
+            margin-right: auto;
+            font-family: 'SangSangYoungestDaughter';
+            font-size: 40px;
+        }
+        #main {
+            border: 1px solid black;
+            padding: 10px 10px;
+            width: 145px;
+            height: 250px;
+            margin-left: 20vw;
+            display: inline-block;
+        }
+        #sub {
+            border: 1px solid black;
+            padding: 10px 10px;
+            width: 145px;
+            height: 250px;
+            margin-left: 3vw;
+            display: inline-block;
+        }
+        #back {
+            border: 1px solid black;
+            padding: 10px 10px;
+            width: 145px;
+            height: 250px;
+            margin-left: 3vw;
+            display: inline-block;
+        }
+        a {
+            text-decoration-line: none;
+        }
+        table {
+            margin-left: 30vw;
+            font-family: "Pretendard-Light";
+        }
+        #text {
+            margin-left: 12vw;
+            font-size: 25px;
+        }
+        #maintext, #subtext, #backtext {
+            display: inline-block;
+            margin-left: 8vw;
+            font-family: "Pretendard-Light";
+        }
+        #maincolor {
+            display: inline;
+        }
+        #test {
+            margin-left: 20vw;
+        }
+        button {
+            background-color: #fffefc;
+            border: 1px solid #fffefc;
+            font-size: 25px;
+            font-family: "Pretendard-Light";
+        }
+        #button {
+            padding-left: 2vw;
+        }
+        .revert, .import{
+            font-family: 'SangSangYoungestDaughter';
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body class="body">
+    <nav id="nav">
+
+    </nav>
+    <div class="container">
+
+    </div>
+
+    <br>
+    <br>
+    <h2>설정</h2>
+    <h4> <a href="../setting.html"> < </a> 테마 색상 변경</h4>
+    <p>연필 모양 혹은 색을 클릭하여 색을 변경해보세요.</p>
+    <br>
+    <br>
+    
+    <div id="text">
+        <div id="maintext">메인</div>
+        <div id="subtext">서브</div>
+        <div id="backtext">배경</div>
+    </div>
+    <!--https://webactually.com/2021/02/05/
+        CSS-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%A7%80%EC%A0%95-
+        %EC%86%8D%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%83%89%EC%83%81-
+        %EB%A7%8C%EB%93%A4%EA%B8%B0/ 참고하기-->
+    <div>
+        <div class="colorSet">
+            <span><input class="main-color" type="color" id="main" value /></span>
+            <span><input type="color" class="sub-color" id="sub" value /></span>
+            <span><input type="color" id="back" onchange="changeBackgroundColor(event)"></span>
+            <div id="button">
+                <button class="revert" onclick="resetColor()">재설정</button><br><br>
+                <button class="import">저장 셋업 불러오기</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeBackgroundColor(event) {
+          // 선택된 색상 값을 가져와서 배경 색상으로 설정
+          var selectedColor = event.target.value;
+          document.body.style.backgroundColor = selectedColor;
+        }
+
+        function resetColor() {
+            // 배경 색상을 흰색으로 리셋
+            document.body.style.backgroundColor = "#fffefc";
+            document.body.style.color = "black";
+        }
+      </script>
+</body>
+</html>
