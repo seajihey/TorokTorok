@@ -59,39 +59,36 @@ body{
     background-color: #FFFEFC;
     height: 100vh;
     width: 100vw ;
-}
-
-/* 전체 캘린더 크기 */
-.allCal{
-  display:flex;
-  overflow: hidden;
-  width: 100vw;
-  height: 86vh;
-  transform: translateY(10v);
-  
-}
-.seeWrap{
-  display:flex;
-  transform:translateX(-25vw);
-  position: absolute;
+    overflow: hidden;
 }
 .head {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100vw;
+  margin-right: 6.5vw;
+  margin-left: 6.5vw;
+  transform: translateX(23vw);
   
 
 }
+.seeWrap{
+  width: 2665px;
+  overflow: hidden;
+  margin-top:1vh;
+}
+
 .yearMonth{
-  transform: translate(-1vw,-25vh);  
+  position: absolute;
+  transform: translate(-9vw,15vh);  
 }
 .year{
-  font-size: 2rem;
+  font-size: 2.3vw;
   font-weight: bold;
   font-family: 'SangSangYoungestDaughter';
-}
+  width: 8vw;
+  margin-bottom: 1vh;
+} 
 .month{
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   font-family: 'SangSangYoungestDaughter';
   float: right;
 
@@ -109,15 +106,15 @@ body{
   
 }
 .calMain {
-  width: 44vw;
-  height: 72.22vh;
+  height: 75vh;
   margin-top: 7vw;
 }
 
 .days {
   display: flex;
-  
+  width: 100%;
 }
+
 
 .day {
   width: calc(39vw/7);
@@ -128,22 +125,20 @@ body{
 .dates {
   display: flex;
   flex-flow: row wrap;
-  height: 550px;
-  
-  
+  height: 70vh;
 }
  /* 각 칸 설정 */
-.date {
-  width: 5.5vw;
-  height: 12.44vh;
+ .date {
+  width: calc(100% / 7.2);
+  height: -15vh;
   text-align: right;
   border-bottom: 1px solid #333333;
   border-top: 1px solid #333333;
-
   border-left: 1px solid #333333;
   text-align: center;
-  padding-top:5px;
+  padding-top: 5px;
   border-right: 1px solid #333333;
+  
 
 }
 
@@ -157,8 +152,9 @@ body{
 .date:nth-child(7n) {
   color: #396EE2;
 }
-.date.prev-month {
-  color: #A0A0A0; /* 이전 월의 날짜 색상을 변경하세요 */
-  /* 이전 월의 날짜에 대한 추가 스타일을 적용하세요 */
+.date.nextMonth {
+  color: #A0A0A0; 
 }
-
+.date.prevMonth {
+  color: #A0A0A0; 
+}

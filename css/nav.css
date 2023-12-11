@@ -105,9 +105,19 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    
+    z-index: 99999999;
 }
+.codeChange{
+    margin-left: 3.5vw;
+    font-family: "Pretendard-SemiBold";
+    transform: translateY(90vh);
+    background-color: #E97E41 ;
+    padding: 0.5vw 1vw;
+    border-radius: 10vw;
+    color: white;
 
+
+}
 /* 각각 요소 일자로 맞추기 */
 .nav_logo {
     display: flex;
