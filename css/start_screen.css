@@ -3,7 +3,9 @@
   * ::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라, 엣지 */
   }
-  
+  a{
+    text-decoration: none;;
+  }
   body{
     margin: 0;
     padding: 0;
@@ -11,6 +13,7 @@
     transition: background-color 1s ease;
     overflow: hidden;
   }
+
 
   p{
     display: block;

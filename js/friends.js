@@ -11,29 +11,40 @@ class Firends{
         /* db불러오기*/
         this.db = new Db();
 
-        /* 자주쓰는 변수 저장*/
-        //내 아이디 저장(백엔드가 없어서 okcoco03이라고 가정, 백엔드 생성시 myId에 동기적으로 우선불러오기)
-        
-        // myId 설정
-        this.myid = "okcoco03";  // 원하는 사용자 ID로 변경
+        /* 로그인으로부터 불러온 내 정보 저장*/
+        this.myid = "";  
+        this.getUserInfo();
         this.myData = this.db.user.find(user => user.userId === this.myid);
         //현재 날짜저장
         this.pages= document.querySelectorAll('.fpage');
 
 
-
-
+        
         /* 함수 */
+
         // 친구보기 속 내 친구만 노출시키기
         this.setMyFriend();
         //친구보기, 내 달력 노출 설정 두개 선택지 클릭 관련
         this.setPaging();
         //친구추가버튼 관련
         this.setAddFriend();
-        
+        console.log(this.myid)
+        console.log(this.myData)
         
     }
-    /*페이지 선택에따라 unacitve속성 와리가리 */
+    /*login혹은 code입략 에서 받아온 user정보 가져오기 동시에 nav로 내보내기 */
+    getUserInfo(){
+        //home.js에서 쓸 데이터 저장
+        const { id, pw, code } = JSON.parse(localStorage.getItem("userInfo"));
+        this.myid = id;
+        
+
+    }
+
+
+
+
+    /*  페이지 선택에따라 unacitve속성 와리가리 */
     setPaging(){
             const firstpage = document.querySelector('.firstPage');
             const secondpage = document.querySelector('.secondPage');
@@ -147,34 +158,34 @@ class Firends{
 
             // 내가적은 아이디가 db에 존재하고, 내 친구에 없다면 친구에 추가하고 팝업끄기
             userIds.forEach((check)=>{
-            if(check==inputData){
-                let myfriend = this.myData.friends;
-                let myfriendArray = myfriend.split(" ");
-                myfriendArray.push(inputData);
-                let result = myfriendArray.join(" ");
-                this.myData.friends = result;
-                console.log('성공!');
+                if(check==inputData){
+                    let myfriend = this.myData.friends;
+                    let myfriendArray = myfriend.split(" ");
+                    myfriendArray.push(inputData);
+                    let result = myfriendArray.join(" ");
+                    this.myData.friends = result;
+                    console.log('성공!');
 
-                //친구 공개 범위
-                this.myData["open_"+check]="0 0 0";
-                console.log(this.myData);
+                    //친구 공개 범위
+                    this.myData["open_"+check]="0 0 0";
+                    console.log(this.myData);
 
 
-                this.setMyFriend();
-                allBox.classList.add('unactive');
-                console.log(this.myData.friends)
-            }
-            //내가 적은 아이디가 db에 없음
-            else{
-                const divItem = document.createElement('div');
-                divItem.classList.add('twice');
-                allBox.appendChild(divItem);
+                    this.setMyFriend();
+                    allBox.classList.add('unactive');
+                    console.log(this.myData.friends)
+                }
+                //내가 적은 아이디가 db에 없음
+                else{
+                    const divItem = document.createElement('div');
+                    divItem.classList.add('twice');
+                    allBox.appendChild(divItem);
 
-                let divInner = document.querySelector('.twice');
-                divInner.innerHTML=("해당 유저 정보가 없습니다.");
-                return 0;  
-            }
-        })
+                    let divInner = document.querySelector('.twice');
+                    divInner.innerHTML=("해당 유저 정보가 없습니다.");
+                    return 0;  
+                }
+            })
                 
             }
         });

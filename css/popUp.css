@@ -46,6 +46,10 @@ a{text-decoration:none;}
 
 /*환영합니다*/
 
+
+a{
+    text-decoration:none;
+}
 p#exampleModalLabel {
     padding-top: 2.8vh;
 }
