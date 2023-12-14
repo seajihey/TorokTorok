@@ -18,9 +18,10 @@ export class Db{
         {"userId":"okcoco03",
         "userPw":"1234",
         "code":"1234 seojihye",
-        "friends":"ycastle1234",
+        "friends":"ycastle1234 tnals4875",
         'resume':'재미있는 JS',
         "open_ycastle1234" :"1 1 0",
+        "open_tnals4875":"0 0 0"
         },
         {"userId":"tnals4875",
         "userPw":"tnals487",

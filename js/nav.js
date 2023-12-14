@@ -26,9 +26,6 @@ export class Nav{
         this.code = code;
         console.log("nav에서도 작동하지롱");
 
-
-
-
     }
 
     navFisrt(pageName, myNavIdName){
@@ -62,7 +59,6 @@ export class Nav{
         
     }
     exportLoginInfo() {
-        // Wait for the DOMContentLoaded event
         document.addEventListener('DOMContentLoaded', () => {
             const datas = {
                 id: this.id,

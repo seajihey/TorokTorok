@@ -9,7 +9,6 @@ class Login {
         this.db = new Db();
 
         this.dataTrue = false;
-
         /*함수*/
         this.exportLoginInfo();
 
@@ -74,28 +73,28 @@ class Login {
     }
 
     /*                  내보내기용 함수(a태그의 html로 value전달됨)                 */
-    exportLoginInfo(){
-
-    const id = document.querySelector('.info.id input').value;
-    const pw = document.querySelector('.info.pw input').value;
-    const code = document.querySelector('.info.code input').value;
+    exportLoginInfo() {
+        const aTag = document.querySelector('a');
+        aTag.addEventListener('click', (check) => {
+            // 클릭 이벤트 발생 시 다시 한 번 값 업데이트
+            const id = document.querySelector('.info.id input').value;
+            const pw = document.querySelector('.info.pw input').value;
+            const code = document.querySelector('.info.code input').value;
+        
+            const datas = {
+                id: id,
+                pw: pw,
+                code: code,
+            }
     
-    const datas ={
-        id:id,
-        pw:pw,
-        code:code,
-    }
-
-    const aTag = document.querySelector('a');
-    aTag.addEventListener('click',(check)=>{
-        this.isTure();
-        if(this.dataTrue == true){
-            localStorage.setItem("userInfo",JSON.stringify(datas));
-        }else{
-            check.preventDefault();
-        }
-    });
-
+            this.isTure();
+    
+            if (this.dataTrue == true) {
+                localStorage.setItem("userInfo", JSON.stringify(datas));
+            } else {
+                check.preventDefault();
+            }
+        });
     }
 
     /*          유효하지 않은 정보 표시용           */

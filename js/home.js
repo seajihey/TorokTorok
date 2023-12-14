@@ -20,7 +20,7 @@ class Home {
         
 
         /* 로그인으로부터 불러온 내 정보 저장 */
-        this.id = "";
+        this.id= "";
         this.pw = "";
         this.code = "";
         this.getUserInfo();
@@ -28,7 +28,7 @@ class Home {
         this.getDays();
         /* 달력 slider 셋팅 */
         this.getSlick();
-
+        this.showModal();
 
 
         /* nav에 유저정보 보내기를 통해, 다른 페이지에서도 로그인된 유저 불러오게끔 */
@@ -40,14 +40,13 @@ class Home {
     }
 
 
-    /*login혹은 code입력에서, user정보 가져오기 +  nav로 data 내보내기 */
     getUserInfo(){
         //home.js에서 쓸 데이터 저장
         const { id, pw, code } = JSON.parse(localStorage.getItem("userInfo"));
         this.id=id;
         this.pw=pw;
         this.code=code;
-        console.log(this.id);
+        console.log(id);
     }
 
 
@@ -103,17 +102,24 @@ class Home {
                 else if (index >= (firstDay + lastDay)) {
                     dateClass += ' nextMonth';
                 }
-        const reviewLink = `review.html?date=${viewYear}-${viewMonth + 1}-${date}`;
+        // 해당 날짜에 맞는 이미지 데이터를 가져오기 (record에 대한 데이터)
+        const imageData = this.db.record.find((record) => {
+            const recordDate = new Date(record.date);
+            return recordDate.getFullYear() === viewYear && recordDate.getMonth() === viewMonth && recordDate.getDate() === date;
+        });
+
+        // 이미지 경로
+        const imagePath = imageData ? imageData.image : ''; 
 
         return `
-        <div class="${dateClass}" data-day="${date}">
-            <a href="${reviewLink}">
-                <div class="dateText">${date}</div>
-                <!-- js에서 가져온 data img -->
-                <img src="js에서가져온_data_img.jpg" alt="JS에서 가져온 Data Image">
-            </a>
-        </div>`;
-        }).join('');
+            <div class="${dateClass}" data-day="${date}">
+                <a class="showModal">
+                    <div class="dateText">${date}</div>
+                    ${imagePath ? `<img src="${imagePath}" alt="">` : ''}
+                </a>
+            </div>
+        `;
+    }).join('');
     
             head.querySelector('.year').textContent = `${viewYear}년`;
             head.querySelector('.month').textContent = `${viewMonth + 1}월`;
@@ -158,7 +164,35 @@ class Home {
 
 
     }
+    showModal() {
+        const showModalElements = document.querySelectorAll('.showModal');
+        showModalElements.forEach(showModalElement => {
+            showModalElement.addEventListener('click', () => {
+                const modalFrame = document.querySelector('.modalFrame');
+                modalFrame.classList.add('active');
+                modalFrame.style.zIndex = "99999999"
+            });
+        });
+    }
 
+    exportLoginInfo() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const datas = {
+                id: this.id,
+                code: this.code,
+            }
+
+            const aTag = document.querySelector('a');
+            if (aTag) {
+                aTag.addEventListener('click', () => {
+                    if (this.dataTrue == true) {
+                        localStorage.setItem("userInfo", JSON.stringify(datas));
+                    }
+                });
+            }
+    
+        });
+    }
 }
 
 // 필수 지우면 안돼용 맨 막줄에 있어야 해용

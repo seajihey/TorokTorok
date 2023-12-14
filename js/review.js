@@ -82,12 +82,11 @@ class Review{
         var slider = document.getElementById("progress");
         var output = document.getElementById("progress_value");
         output.innerHTML = slider.value;
-
+    
         slider.oninput = function() {
             output.innerHTML = this.value;
         }
     }
-
 
 
 }
