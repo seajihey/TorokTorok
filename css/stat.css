@@ -153,7 +153,7 @@ option {
   background-color: rgba(244, 243, 242, 0.921);
 }
 
-.inner-section{
+.inner-section, .inner-section-frame{
   margin: 0 auto;
   width: 24vw; height: 60vh;
   background-color: rgba(255, 254, 252, 1);

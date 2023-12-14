@@ -15,7 +15,7 @@
 
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script src="./js/bootstrap_js/bootstrap.js"></script>
     <script src="./js/bootstrap_js/bootstrap.bundle.min.js"></script>
     
@@ -29,13 +29,6 @@
 
 </head>
 <body>
-<script>
-      function get_year(){
-        let result =[];
-        const year_check = document.getElementById('year_check_right');
-        result.year_check = year_check.options[year_check.selectedIndex].value;
-  }
-</script>
 
     <!--         nav            -->
     <div class="nav_section">
@@ -49,9 +42,9 @@
         <article class="left_content">
 
           <div class="date_check">
-            <select class="select" id="year_check_right" onchange="get_year()">
-              <option selected name="year_check_right" value="1">2023년</option>
-              <option name="year_check_right" value="2">2022년</option>
+            <select class="select" id="year_check_left">
+              <option selected name="year_check_left" value="2023">2023년</option>
+              <option name="year_check_left" value="2022">2022년</option>
             </select>
           </div>
           
@@ -90,40 +83,40 @@
               </svg></div>
             <div class="right_content_box">
               <div class="select_box_right select">
-                <select class="select_year_right">
-                  <option selected value="0">2023년</option>
-                  <option value="1">2022년</option>
+                <select class="select_year_right" id="year_check_right">
+                  <option selected value="2023" name="year_check_right">2023년</option>
+                  <option value="2022"name="year_check_right">2022년</option>
                 </select>
                 <select class="select_month_right select">
                   <option selected value="0">월</option>
-                  <option value="1">10월</option>
-                  <option value="2">11월</option>
-                  <option value="3">12월</option>
+                  <option value="10">10월</option>
+                  <option value="11">11월</option>
+                  <option value="12">12월</option>
               </select>
               </div>
                 <div class="view_month_record">
-                  <div class="inner-section">
-                    <!-- <div class="inner-content">
-                      <div class="month-content">
-                        <div class="month_record_img">
+                  <div class="inner-section-frame">
+                    <!-- <div class="inner-section"> -->
+                      <!-- <div class="inner-content">
+                        <div class="month-content">
+                          <div class="month_record_img">
+                          </div>
+                          <div class="month_record_text">
+                            <div class="month_record_title">
+                            </div>
+                            <div class="month_record_date">
+                            </div>
+                            <div class="month_record_oneline">
+                            </section>
+                            </div>
+                          </div>
                         </div>
-                        <div class="month_record_text">
-                          <div class="month_record_title">
-                          </div>
-                          <div class="month_record_date">
-                          </div>
-                          <div class="month_record_oneline">
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
+                      </div> -->
+                    <!-- </div> -->
                   </div>
                 </div>
 
             </div>
         </article>
-         
-    </section>
-
 </body>
 </html>

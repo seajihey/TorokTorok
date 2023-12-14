@@ -6,7 +6,7 @@ class Review{
         this.dragAndDrop();
 
         this.date();
-        // this.star();
+        // this.star(target);
         this.progress();
     }
 
@@ -70,12 +70,8 @@ class Review{
         document.getElementById('date').value = new Date().toISOString().substring(0, 10);;
     }
 
-
-
-    // star(){
-    //     const drawStar = (target) => {
-    //         document.querySelector('.star span').style.width = '${target.value * 10}%';
-    //       }
+    // star(target){
+    //     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
     // }
 
     progress(){

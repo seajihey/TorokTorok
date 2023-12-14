@@ -83,7 +83,7 @@ body{
 }
 
 .obj{
-  padding-top: 9vh; 
+  padding-top: 8vh; 
   padding-left: 3vw; padding-right: 3vw;
 }
 
@@ -145,7 +145,7 @@ body{
   float: left;
   font-family: "Pretendard-Regular";
   font-size: .9vw;
-  padding-bottom: 1vh;
+  padding-bottom: 1.15vh;
 }
 
 .part{
@@ -217,36 +217,26 @@ option {
 
 
 /*----별점----*/
-.rating_box {
-  display: flex;
-  /* display: inline;
+.star {
   position: relative;
-  float: right; */
-}
-
-.rating {
-  position: relative;
+  font-size: 2rem;
   color: #ddd;
-  font-size: 30px;
-  text-align: center;
 }
 
-.rating input {
-  position: absolute;
-  left: 0;
-  right: 0;
+.star input {
   width: 100%;
   height: 100%;
+  position: absolute;
+  left: 0;
   opacity: 0;
   cursor: pointer;
 }
 
-.rating_star {
+.star span {
   width: 0;
-  color: #ffc107;
-  position: absolute;
+  position: absolute; 
   left: 0;
-  right: 0;
+  color: red;
   overflow: hidden;
   pointer-events: none;
 }
