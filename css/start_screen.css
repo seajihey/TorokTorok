@@ -7,6 +7,8 @@
   a {
     text-decoration: none;
     color: inherit;
+    color: #404040 !important;
+    text-decoration: none !important;
 }
   
 
@@ -107,7 +109,8 @@
   }
   
   #rogo_text{
-    text-align: center;
+    display: inline;
+    /* text-align: center; */
     position: relative;
     top: 1vh;
   }
