@@ -129,6 +129,7 @@ body{
   display: flex;
   flex-flow: row wrap;
   height: 70vh;
+
 }
  /* 각 칸 설정 */
  .date {
@@ -142,13 +143,14 @@ body{
   padding-top: 5px;
   border-right: 1px solid #333333;
   overflow: hidden; 
+  
  }
 
 .date img {
   z-index: -999;
   position: absolute;
   width: 90px;
-  height: 110px;
+  height: 100px;
   overflow: hidden; 
   border-radius: 0.5rem;
 

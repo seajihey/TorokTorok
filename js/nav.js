@@ -49,7 +49,7 @@ export class Nav {
             }
 
             const setLogout = document.querySelector('.nav_login');
-            if (this.id === "") {
+            if (this.id != "") {
                 setLogout.innerHTML = `<a href="./login.html">로그아웃&nbsp;▶</a>`;
             }
         }
