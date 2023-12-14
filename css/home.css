@@ -39,19 +39,21 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
-  font-family: 'SangSangYoungestDaughter';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+  }
+  @font-face {
+    font-family: 'SangSangYoungestDaughter';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 *{
   margin:0;
   padding:0;
 }
-
+.unactive{
+  opacity: 0
+}
 .active{
   opacity: 100%;
 }
@@ -70,6 +72,7 @@ body{
   
 
 }
+
 .seeWrap{
   width: 2665px;
   overflow: hidden;
@@ -138,10 +141,22 @@ body{
   text-align: center;
   padding-top: 5px;
   border-right: 1px solid #333333;
-  
+  overflow: hidden; 
+ }
+
+.date img {
+  z-index: -999;
+  position: absolute;
+  width: 90px;
+  height: 110px;
+  overflow: hidden; 
+  border-radius: 0.5rem;
 
 }
-
+.dateText{
+  background-color: white;  
+  cursor: pointer;
+}
 /* 주말 색 변경 */
 .day:nth-child(7n + 1),
 .date:nth-child(7n + 1) {
@@ -157,4 +172,15 @@ body{
 }
 .date.prevMonth {
   color: #A0A0A0; 
+}
+
+
+.modalFrame{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  z-index: -99;
+}
+.showModal{
 }

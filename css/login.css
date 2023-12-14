@@ -1,0 +1,150 @@
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Light";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 400;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 500;
+    font-family: "Pretendard-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 600;
+    font-family: "Pretendard-SemiBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 800;
+    font-family: "Pretendard-ExtraBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'SangSangYoungestDaughter';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+a{
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+}
+body{
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFEFC;
+
+}
+
+/* 전체 틀 */
+.loginBox{
+    width: 30vw;
+    height: 60vh;
+    transform: translateY(-5vh);
+}
+
+/* 맨 위 타이틀 */
+.lgitle{
+    width: 30vw;
+    text-align: center;
+    padding:0 0 8vh 0;
+    font-family: "Pretendard-Bold";
+    font-size: 2rem;
+}
+
+/*login 정보입력칸*/
+.info{
+    width: 30vw;
+}
+
+.upText{
+    width: 30vw;
+    font-family: "Pretendard-medium";
+    padding:2vh 0 1vh 0;
+    display:flex;
+}
+.text{
+    width: 28vw;
+    padding:1.5vh 0 1.5vh 2vw;
+    border: 1px solid rgb(39, 39, 39);
+    border-radius: 0.5rem;
+    font-family: "Pretendard-light";
+    font-size: small;
+}
+.etc{
+    display: flex;
+    padding-top: 1vh;
+    justify-content: space-between;
+    color:grey;
+    text-decoration:underline;
+    font-family: "Pretendard-light";
+
+}
+.gologin{
+    width: 10vw;
+    display: flex;
+    justify-content: center;    
+    padding:1vh 0 1vh 0;
+    margin: 2vh 10vw 1vh 10vw;
+    background-color: #E97E41 ;
+    color:white;
+    border-radius: 0.5rem;
+    font-family: "Pretendard-medium";
+    font-size: large;
+}
+.signIn{
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    padding:1vh 0 1vh 0;
+    text-decoration:underline;
+    color:grey;
+    font-family: "Pretendard-medium";
+
+}
+hr{
+    background-color: black;
+}
+
+
+.errorMsg{
+    padding-left: 1vw;
+    font-size:x-small;
+    display: flex;
+    align-items: center;
+    color:#E97E41;
+}
+.unactive{
+    display: none;
+}
