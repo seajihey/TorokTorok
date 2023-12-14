@@ -56,20 +56,26 @@ body{
     width: 39vw;
     display: flex;
     justify-content: space-between;
-
 }
 
 .text_effect{
-    padding-left: 1vw;
-
-}
+  /* width: 2.5vw; height: 2.5vh; */
+  padding-left: 1vw;
+  padding-bottom: 1vh;
+    
+  }
 
 .d_label{
     display: inline;
     float: left;
     font-family: "Pretendard-Regular";
     font-size: .9vw;
-    padding-bottom: 1vh;
+    padding-top: 1vh;
+  }
+  
+.one_line_label{
+  padding-bottom: 1vh;
+
 }
 
 
