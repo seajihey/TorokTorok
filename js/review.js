@@ -4,10 +4,10 @@ class Review{
 
         //드래그 앤 드랍
         this.dragAndDrop();
-
         this.date();
-        // this.star(target);
+        this.starChange();
         this.progress();
+
     }
 
     dragAndDrop(){
@@ -59,8 +59,6 @@ class Review{
             }
         }
     }
-    // db.recode.appendChild()
-    // console.log(files[0])
 
     // get_tags(){
     //     tags = 
@@ -70,9 +68,12 @@ class Review{
         document.getElementById('date').value = new Date().toISOString().substring(0, 10);;
     }
 
-    // star(target){
-    //     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
-    // }
+    starChange(){
+        const star_input = document.querySelector('.star_input');
+        star_input.addEventListener('input',()=>{
+            document.querySelector('.star span').style.width=`${star_input.value*10}%`
+        })
+    }
 
     progress(){
         var slider = document.getElementById("progress");
@@ -85,7 +86,10 @@ class Review{
     }
 
 
+
+
 }
 window.onload = () =>{
     new Review();
 }
+
