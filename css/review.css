@@ -68,6 +68,11 @@ body{
     background-color: rgba(56, 56, 56,0.5);
 }
 
+.back{
+  border: 0 !important;
+  background-color: #fff !important; 
+}
+
 .section1{
   float: right;
   background-color: white;
@@ -236,7 +241,7 @@ option {
   width: 0;
   position: absolute; 
   left: 0;
-  color: red;
+  color: #fd7526;
   overflow: hidden;
   pointer-events: none;
 }

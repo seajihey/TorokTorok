@@ -25,11 +25,9 @@
 
 </head>
 <body>
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#reviewSet" aria-controls="reviewSet">dddddd</button>
     <section class="section1">
-        <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="reviewSet" aria-labelledby="offcanvasRightLabel">
             <div class="head">
-                <button type="button" class="text-reset" data-bs-dismiss="offcanvas">
+                <button type="button" class="back">
                     <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
                     <path d="M14.5166 15.0669L26.9842 27.5346L14.5166 40.0023L12.9746 38.4383L23.8783 27.5346L12.9746 16.6309L14.5166 15.0669ZM23.3276 15.0669L35.7953 27.5346L23.3276 40.0023L21.7857 38.4383L32.6894 27.5346L21.7857 16.6309L23.3276 15.0669Z" fill="black"/>
                     </svg>
@@ -57,7 +55,6 @@
                                     <div class="badge rounded-pill">무서운</div>
                                     <div class="badge rounded-pill">감동있는</div>
                                     <div class="badge rounded-pill">생각이 깊어지는</div>
-                                    <div class="badge rounded-pill">생각이 깊어지는</div>
                                 </div>
                             </div>
                             <div class="part">
@@ -73,7 +70,7 @@
                                 <span class="star">
                                     ★★★★★
                                     <span>★★★★★</span>
-                                    <input type="range" oninput="star(this)" value="1" step="1" min="0" max="10">
+                                    <input class="star_input" type="range" value="1" step="1" min="0" max="10">
                                   </span>
                             </div>
                             <div class="part">
@@ -84,7 +81,6 @@
                                 <input id="progress" type="range" value="100" step="5" min="0" max="100">     
                             </div>
                         </div>
-                    </div>
                 </article>
                 <article class="bottom_content">
                     <div class="review_title"><span id="label">리뷰</span>
