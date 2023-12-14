@@ -15,7 +15,10 @@ body{
     letter-spacing: -1px;
     font-family: "Pretendard-Regular";
   }
-
+a{
+  text-decoration: none;
+  
+}
 .nav_section{
   width: 100vw;
   height: 8vh;

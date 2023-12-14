@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토록토록</title>
+        <!--              favicon            -->
+        <link
+        rel="icon"
+        href="image/dog.svg"
+        type="image/x-icon"
+        />
+
+        <!--              css                -->
+        <link rel="stylesheet" href="./css/login.css">
+
+        <!--              js                -->
+        <script type="module" src="./js/login.js" defer></script>
+</head>
+
+
+
+<body>
+
+    <div class="loginBox">
+
+        <div class="lgitle"> Welcome!</div>
+        <hr>
+        <form id="loginForm">
+            <div class="info id">
+                <div class="upText">Id<div class="errorMsg infoId"></div></div>
+                <input type="text"  class="text" value="" placeholder="ID를 입력하세요.">
+            </div>
+            <div class="info pw">
+                <div class="upText">Password<div class="errorMsg infoPw">.</div></div>
+                <input type="password" value="" class="text" placeholder="PW를 입력하세요.">
+            </div>
+            <div class="info code">
+                <div class="upText">Code<div class="errorMsg infoCode"></div></div>
+                <input type="text" value=""  class="text" placeholder="내 코드 중, 입장할 코드를 입력하세요.">
+            </div>
+
+            <div class="etc">
+                <div class="remember"><input type="checkbox" > ID 기억하기</div>
+                <div class="forget">Forgot your password? </div>
+            </div>
+
+            <div class="gologin"><a href="./home.html">로그인</a></div>
+            <div class="signIn">회원가입</div>
+        </form>
+    </div>
+
+
+
+
+</body>
+</html>
+

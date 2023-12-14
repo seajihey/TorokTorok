@@ -1,39 +1,43 @@
 // nav 불러오기
 import{ Nav } from './nav.js';
 import{ Db } from './db.js';
-class Firends{
+class Friends {
 
-    constructor(){
+    constructor() {
 
         /* nav불러오기*/
         this.navTool = new Nav();
-        this.navTool.fetchingNav('friend','nav');
+        this.navTool.fetchingNav('friend', 'nav');
         /* db불러오기*/
         this.db = new Db();
 
-        /* 자주쓰는 변수 저장*/
-        //내 아이디 저장(백엔드가 없어서 okcoco03이라고 가정, 백엔드 생성시 myId에 동기적으로 우선불러오기)
-        
-        // myId 설정
-        this.myid = "okcoco03";  // 원하는 사용자 ID로 변경
-        this.myData = this.db.user.find(user => user.userId === this.myid);
-        //현재 날짜저장
-        this.pages= document.querySelectorAll('.fpage');
+        /* 로그인으로부터 불러온 내 정보 저장*/
+        this.myid = "";
+        this.myData = []; 
 
-
-
-
-        /* 함수 */
-        // 친구보기 속 내 친구만 노출시키기
+        this.getUserInfo();
+        this.navTool.exportLoginInfo()
         this.setMyFriend();
-        //친구보기, 내 달력 노출 설정 두개 선택지 클릭 관련
         this.setPaging();
-        //친구추가버튼 관련
         this.setAddFriend();
-        
-        
+        console.log(this.myData)
     }
-    /*페이지 선택에따라 unacitve속성 와리가리 */
+
+    getUserInfo() {
+        // home.js에서 쓸 데이터 저장
+        const { id, pw, code } = JSON.parse(localStorage.getItem("userInfo"));
+        this.myid = id;
+    
+        // myid를 가진 사용자가 존재하는지 확인
+        this.myData = this.db.user.find(user => user.userId === this.myid);
+    
+        if (!this.myData) {
+            console.error("사용자 데이터를 찾을 수 없습니다.");
+        }
+    }
+
+
+    /*  페이지 선택에따라 unacitve속성 와리가리 */
     setPaging(){
             const firstpage = document.querySelector('.firstPage');
             const secondpage = document.querySelector('.secondPage');
@@ -50,10 +54,7 @@ class Firends{
                 firstpage.classList.add('unactive');
                 secondpage.classList.remove('unactive');
                 console.log("여러번되니?")
-
-                //db에 저장된 범위에 맞추어 open하는 함수
                 this.setMyCalOpen();    
-
             });       
     }
     
@@ -130,7 +131,6 @@ class Firends{
             userIds.push(person.userId);
         })
         console.log(userIds);
-
         //이미 나의 친구인지 검사
         let myfriend = this.myData.friends;
         let myfriendArray = myfriend.split(" ");
@@ -147,34 +147,34 @@ class Firends{
 
             // 내가적은 아이디가 db에 존재하고, 내 친구에 없다면 친구에 추가하고 팝업끄기
             userIds.forEach((check)=>{
-            if(check==inputData){
-                let myfriend = this.myData.friends;
-                let myfriendArray = myfriend.split(" ");
-                myfriendArray.push(inputData);
-                let result = myfriendArray.join(" ");
-                this.myData.friends = result;
-                console.log('성공!');
+                if(check==inputData){
+                    let myfriend = this.myData.friends;
+                    let myfriendArray = myfriend.split(" ");
+                    myfriendArray.push(inputData);
+                    let result = myfriendArray.join(" ");
+                    this.myData.friends = result;
+                    console.log('성공!');
 
-                //친구 공개 범위
-                this.myData["open_"+check]="0 0 0";
-                console.log(this.myData);
+                    //친구 공개 범위
+                    this.myData["open_"+check]="0 0 0";
+                    console.log(this.myData);
 
 
-                this.setMyFriend();
-                allBox.classList.add('unactive');
-                console.log(this.myData.friends)
-            }
-            //내가 적은 아이디가 db에 없음
-            else{
-                const divItem = document.createElement('div');
-                divItem.classList.add('twice');
-                allBox.appendChild(divItem);
+                    this.setMyFriend();
+                    allBox.classList.add('unactive');
+                    console.log(this.myData.friends)
+                }
+                //내가 적은 아이디가 db에 없음
+                else{
+                    const divItem = document.createElement('div');
+                    divItem.classList.add('twice');
+                    allBox.appendChild(divItem);
 
-                let divInner = document.querySelector('.twice');
-                divInner.innerHTML=("해당 유저 정보가 없습니다.");
-                return 0;  
-            }
-        })
+                    let divInner = document.querySelector('.twice');
+                    divInner.innerHTML=("해당 유저 정보가 없습니다.");
+                    return 0;  
+                }
+            })
                 
             }
         });
@@ -187,14 +187,15 @@ class Firends{
     //db에 저장된 범위에 맞추어 open하는 함수
     setMyCalOpen(){
         const sectionAll = document.querySelector('.user');
-        
+        sectionAll.innerHTML="";        
 
         const myfriendsList = this.myData.friends;
-        const myfriendsListArray = myfriendsList.split(" ");
+        const myfriendsListArray = this.myData.friends.split(" ");
         //친구추가시에도 호출되는데, 클리너 안해주면 이미있는 친구가 두번나오기에 클리너해주기
 
         //루프를 돌며 내 친구들 화면에 추가하기 
         myfriendsListArray.forEach((friend)=>{
+
             let tempDiv = document.createElement("div");
             tempDiv.classList.add("wrapUser");
 
@@ -246,5 +247,5 @@ class Firends{
 
 //필수 지우면 안돼용 맨 막줄에 있어야 해용
 window.onload = () =>{
-    new Firends();
+    new Friends();
 }
