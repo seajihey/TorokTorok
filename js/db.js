@@ -28,13 +28,16 @@ export class Db{
         "code":"sumin gamja",
         "friends":"okcoco03 ycastle1234",
         'resume':'공포영화 원툴 : )',
-
+        "open_ycastle1234" :"1 1 0",
+        "open_okcoco03":"0 0 0"
         },
         {"userId":"ycastle1234",
         "userPw":"ycastle",
         "code":"yuncastle",
         "friends":"tnals4875 okcoco03",
         'resume':'곧 크리스마스 !!',
+        "open_tnals4875" :"1 1 0",
+        "open_okcoco03":"0 0 0"
         },
 
     ]

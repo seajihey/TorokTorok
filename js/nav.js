@@ -1,69 +1,66 @@
-/* nav 공통 모듈 설정용 내보내기 */
-export class Nav{
-
-    constructor(){
+export class Nav {
+    constructor() {
         this.id = "";
         this.code = "";
         this.fetchingUser();
         this.exportLoginInfo();
     }
 
-    fetchingNav(pageName,myNavIdName){
+    fetchingNav(pageName, myNavIdName) {
         fetch('nav.html')
-            .then(Response => Response.text())
-            .then(html=>{
-                
+            .then(response => response.text())
+            .then(html => {
                 document.getElementById(myNavIdName).innerHTML = html;
-                this.navFisrt(pageName,myNavIdName);
-                
+                this.navFirst(pageName, myNavIdName);
             })
-            .catch(error=>console.error('어라라 에러면 곤란한데...',error));
-            
-    }
-    fetchingUser(){
-        const {id ,pw,code} = JSON.parse(localStorage.getItem("userInfo"));
-        this.id = id
-        this.code = code;
-        console.log("nav에서도 작동하지롱");
-
+            .catch(error => console.error('에러 발생:', error));
     }
 
-    navFisrt(pageName, myNavIdName){
-        const nav = document.getElementById(myNavIdName); 
+    fetchingUser(userInfo) {
+        if (userInfo && userInfo.id) {
+            const { id, pw, code } = userInfo;
+            this.id = id;
+            this.code = code;
+            console.log("nav에서도 작동하지롱");
+        } else {
+            this.id = "none";
+            this.code = "none";
+        }
+    }
+
+    navFirst(pageName, myNavIdName) {
+        const nav = document.getElementById(myNavIdName);
         const temp = pageName + "Text";
         const tempImg = pageName + "Img";
-        
-        if(nav){
+
+        if (nav) {
             const textElement = nav.querySelector('.' + temp);
-            const ImgElement = nav.querySelector('.' + tempImg); 
-    
-            if(textElement){
+            const imgElement = nav.querySelector('.' + tempImg);
+
+            if (textElement) {
                 textElement.style.color = "#E97E41";
-                textElement.classList.remove('nav_unactive'); // unactive 클래스 제거
+                textElement.classList.remove('nav_unactive');
+            }
+            if (imgElement) {
+                imgElement.classList.add('nav_active');
+            } else {
+                imgElement.classList.remove('nav_active');
+                textElement.style.color = "none";
+            }
 
-            }
-            if(ImgElement){
-                ImgElement.classList.add('nav_active');
-            }
-            else{
-             ImgElement.classList.remove('nav_active');
-             textElement.style.color="none;"   
-            }
-            // 로그인버튼을 로그아웃 버튼으로 바꾸기
-            const setlogout = document.querySelector('.nav_login');
-            if(this.id == ""){
-                setlogout.innerHTML=`<a href="./login.html">로그아웃&nbsp;▶</a>`
-
+            const setLogout = document.querySelector('.nav_login');
+            if (this.id === "") {
+                setLogout.innerHTML = `<a href="./login.html">로그아웃&nbsp;▶</a>`;
             }
         }
-        
     }
+
     exportLoginInfo() {
         document.addEventListener('DOMContentLoaded', () => {
             const datas = {
                 id: this.id,
                 code: this.code,
-            }
+            };
 
             const aTag = document.querySelector('a');
             if (aTag) {
@@ -73,12 +70,14 @@ export class Nav{
                     }
                 });
             }
-    
         });
     }
-    
 }
 
+const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+// Instantiate Nav with user info
 window.onload = () => {
-    new Nav();
+    const nav = new Nav();
+    nav.fetchingUser(userInfo);
 };

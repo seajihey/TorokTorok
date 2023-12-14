@@ -22,18 +22,21 @@ class Friends {
         this.setAddFriend();
         console.log(this.myData)
     }
-
     getUserInfo() {
         // home.js에서 쓸 데이터 저장
-        const { id, pw, code } = JSON.parse(localStorage.getItem("userInfo"));
-        this.myid = id;
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     
-        // myid를 가진 사용자가 존재하는지 확인
-        this.myData = this.db.user.find(user => user.userId === this.myid);
+        if (userInfo && userInfo.id) {
+            const { id, pw, code } = userInfo;
+            this.myid = id;
     
-        if (!this.myData) {
-            console.error("사용자 데이터를 찾을 수 없습니다.");
-        }
+            // myid를 가진 사용자가 존재하는지 확인
+            this.myData = this.db.user.find(user => user.userId === this.myid);
+    
+            if (!this.myData) {
+                console.error("사용자 데이터를 찾을 수 없습니다.");
+            }
+        } 
     }
 
 
@@ -59,10 +62,10 @@ class Friends {
     }
     
     /*              화면에db에 맞게 내 친구들 정보가 보이게 설정하는 함수           */
-    setMyFriend(){
+    setMyFriend() {
         const sectionFriends = document.querySelector('.fsection');
-        const myfriendsList = this.myData.friends;
-        const myfriendsListArray = myfriendsList.split(" ");
+        if (this.myData && this.myData.friends) {
+            const myfriendsListArray = this.myData.friends.split(" ");
         //친구추가시에도 호출되는데, 클리너 안해주면 이미있는 친구가 두번나오기에 클리너해주기
         sectionFriends.innerHTML="";
 
@@ -86,7 +89,11 @@ class Friends {
             </div>`
             sectionFriends.appendChild(tempDiv);
         })
-
+        }else{
+            sectionFriends.innerHTML=
+            `               
+            로그인 부탁드립니다. `
+        }
     }
     setAddFriend(){
         const close = document.querySelector('.exitFriend');
