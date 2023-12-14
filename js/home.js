@@ -38,13 +38,22 @@ class Home {
 
     }
 
-    getUserInfo(){
-        //home.js에서 쓸 데이터 저장
-        const { id, pw, code } = JSON.parse(localStorage.getItem("userInfo"));
-        this.id=id;
-        this.pw=pw;
-        this.code=code;
-        console.log(id);
+
+    getUserInfo() {
+        // home.js에서 쓸 데이터 저장
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    
+        if (userInfo && userInfo.id) {
+            const { id, pw, code } = userInfo;
+            this.myid = id;
+    
+            // myid를 가진 사용자가 존재하는지 확인
+            this.myData = this.db.user.find(user => user.userId === this.myid);
+    
+            if (!this.myData) {
+                console.error("사용자 데이터를 찾을 수 없습니다.");
+            }
+        } 
     }
 
 
