@@ -29,8 +29,7 @@ class Home {
         /* 달력 slider 셋팅 */
         this.getSlick();
         this.showModal();
-
-
+        this.closeModal();
         /* nav에 유저정보 보내기를 통해, 다른 페이지에서도 로그인된 유저 불러오게끔 */
         // 어차피 내보내기니까 마지막에 설정하기
         // nav는 모든 페이지에 공통으로 연결되어있기에 가능함 
@@ -178,9 +177,22 @@ class Home {
             showModalElement.addEventListener('click', () => {
                 const modalFrame = document.querySelector('.modalFrame');
                 modalFrame.classList.add('active');
-                modalFrame.style.zIndex = "99999999"
+                modalFrame.classList.remove('unactive');
+                modalFrame.style.zIndex = "99999999";
             });
         });
+    }
+    closeModal(){
+        const showModalElements = document.querySelector('.modalFrame').contentWindow.document.querySelector('.back');
+        showModalElements.addEventListener('click', () => {
+            const modalFrame = document.querySelector('.modalFrame');
+            console.log(modalFrame);
+            modalFrame.classList.add('unactive');
+            modalFrame.classList.remove('active');
+            modalFrame.style.zIndex = "-99999";
+            // console.log(showModalElements);
+        });
+    
     }
 
     exportLoginInfo() {
