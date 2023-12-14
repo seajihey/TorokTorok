@@ -146,12 +146,11 @@ class Friends {
                 const divItem = document.createElement('div');
                 divItem.classList.add('twice');
                 allBox.appendChild(divItem);
-
                 let divInner = document.querySelector('.twice');
                 divInner.innerHTML="이미 나의 친구입니다!";
                 console.log("왜아난옴");
-            }else{
-
+            }
+            else{
             // 내가적은 아이디가 db에 존재하고, 내 친구에 없다면 친구에 추가하고 팝업끄기
             userIds.forEach((check)=>{
                 if(check==inputData){
