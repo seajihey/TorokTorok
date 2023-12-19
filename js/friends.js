@@ -14,16 +14,14 @@ class Friends {
         /* 로그인으로부터 불러온 내 정보 저장*/
         this.myid = "";
         this.myData = []; 
-
-        this.getUserInfo();
         this.navTool.exportLoginInfo()
+        this.getUserInfo();
         this.setMyFriend();
         this.setPaging();
         this.setAddFriend();
         console.log(this.myData)
     }
     getUserInfo() {
-        // home.js에서 쓸 데이터 저장
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     
         if (userInfo && userInfo.id) {

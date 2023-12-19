@@ -11,7 +11,6 @@ class Home {
         this.currentIndex = this.date.getMonth();
         
 
-
         /* nav불러오기*/
         this.navTool = new Nav();
         this.navTool.fetchingNav('home', 'nav');
@@ -81,19 +80,13 @@ class Home {
             const nextMonthFirstDay = new Date(viewYear, viewMonth + 1, 1).getDay();
 
             const prevDates = [];
-            for (let i = firstDay - 1; i >= 0; i--) {
-                prevDates.unshift(prevMonthLastDay - i);
-            }
+            for (let i = firstDay - 1; i >= 0; i--) {                 prevDates.unshift(prevMonthLastDay - i);}
 
             const thisDates = [];
-            for (let i = 1; i <= lastDay; i++) {
-                thisDates.push(i);
-            }
+            for (let i = 1; i <= lastDay; i++) {                    thisDates.push(i);}
 
             const nextDates = [];
-            for (let i = 1; i < 7 - nextMonthFirstDay; i++) {
-                nextDates.push(i);
-            }
+            for (let i = 1; i < 7 - nextMonthFirstDay; i++) {                nextDates.push(i);}
 
             const dates = prevDates.concat(thisDates, nextDates);
 
@@ -102,13 +95,9 @@ class Home {
                 let dateClass = 'date';
                 
                 // 이전 달 날짜에 클래스 추가
-                if (index < firstDay) {
-                    dateClass += ' prevMonth';
-                }
+                if (index < firstDay) {                    dateClass += ' prevMonth';}
                 // 다음 달 날짜에 클래스 추가
-                else if (index >= (firstDay + lastDay)) {
-                    dateClass += ' nextMonth';
-                }
+                else if (index >= (firstDay + lastDay)) {                    dateClass += ' nextMonth';}
         // 해당 날짜에 맞는 이미지 데이터를 가져오기 (record에 대한 데이터)
         const imageData = this.db.record.find((record) => {
             const recordDate = new Date(record.date);
@@ -118,8 +107,7 @@ class Home {
         // 이미지 경로
         const imagePath = imageData ? imageData.image : ''; 
 
-        return `
-            <div class="${dateClass}" data-day="${date}">
+        return `            <div class="${dateClass}" data-day="${date}">
                 <a class="showModal">
                     <div class="dateText">${date}</div>
                     ${imagePath ? `<img src="${imagePath}" alt="">` : ''}
